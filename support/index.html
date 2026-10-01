@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f9ff">
+  <meta name="description" content="HowLong app support and contact information. HowLong 应用帮助与联系信息。">
+  <title>帮助与支持 / Help &amp; Support — HowLong</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #1e56e0;
+      --ink: #132b58;
+      --text: #334155;
+      --page: #f5f9ff;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: var(--page);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px;
+      margin: 0;
+      background: radial-gradient(ellipse at 12% 0%, rgba(214, 230, 255, .78), transparent 34rem), linear-gradient(180deg, #f8fbff 0%, var(--page) 34rem, #fff 100%);
+      line-height: 1.75;
+    }
+    a { color: var(--blue); text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid #80aaff; outline-offset: 4px; border-radius: 4px; }
+    .page-shell { width: min(880px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { color: var(--ink); font-size: 17px; font-weight: 700; letter-spacing: -.035em; text-decoration: none; }
+    .brand span { margin-left: 6px; color: var(--blue); font-weight: 600; }
+    .top-link { font-size: 14px; font-weight: 600; text-decoration: none; }
+    .hero, .card {
+      border: 1px solid rgba(225, 234, 247, .92);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, .91);
+      box-shadow: 0 14px 40px rgba(40, 71, 117, .055), inset 0 1px 0 #fff;
+    }
+    .hero { margin-top: 14px; padding: clamp(28px, 6vw, 52px); background: linear-gradient(118deg, rgba(255,255,255,.96), rgba(231,241,255,.92)); }
+    .eyebrow { margin: 0 0 9px; color: var(--blue); font-size: 11px; font-weight: 750; letter-spacing: .17em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 10px; color: var(--ink); font-size: clamp(36px, 7vw, 54px); font-weight: 720; letter-spacing: -.055em; line-height: 1.1; }
+    .lead { max-width: 650px; margin: 0; color: #526681; font-size: 16px; }
+    main { display: grid; gap: 18px; padding: 22px 0 42px; }
+    .card { padding: clamp(22px, 4vw, 34px); }
+    .card h2 { margin-bottom: 18px; color: var(--ink); font-size: 23px; letter-spacing: -.035em; line-height: 1.3; }
+    .card h3 { margin: 22px 0 5px; color: #1b3768; font-size: 16px; line-height: 1.4; }
+    .card h3:first-of-type { margin-top: 0; }
+    .card p { margin-bottom: 10px; font-size: 15px; }
+    .card p:last-child { margin-bottom: 0; }
+    .email-card { border-color: #d7e5fb; background: linear-gradient(135deg, #fff, #f3f8ff); }
+    .email { display: inline-block; margin: 5px 0 10px; font-size: 17px; font-weight: 700; overflow-wrap: anywhere; }
+    .site-footer { display: flex; justify-content: space-between; gap: 14px; padding: 0 2px 28px; color: #8190a7; font-size: 12px; }
+    .site-footer strong { color: #526681; font-weight: 650; }
+    @media (max-width: 560px) {
+      .page-shell { width: calc(100% - 26px); }
+      .topbar { min-height: 70px; }
+      .brand { font-size: 15px; }
+      .top-link { font-size: 12px; }
+      .hero, .card { border-radius: 21px; }
+      .hero { padding: 26px 22px; }
+      .lead { font-size: 14px; }
+      .card h2 { font-size: 21px; }
+      .card p { font-size: 14px; }
+      .site-footer { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="HowLong privacy policy">HowLong<span>还有：到期提醒</span></a>
+      <a class="top-link" href="../">隐私政策 / Privacy Policy</a>
+    </header>
+
+    <header class="hero">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1>帮助与支持<br><span lang="en">Help &amp; Support</span></h1>
+      <p class="lead">关于 HowLong 的使用、问题反馈或功能建议，请通过下方邮箱联系我们。<br lang="en">For help using HowLong, to report an issue, or to share a suggestion, contact us by email below.</p>
+    </header>
+
+    <main>
+      <section class="card email-card" aria-labelledby="contact-title">
+        <h2 id="contact-title">联系支持 / Contact Support</h2>
+        <p>请在邮件中说明你遇到的问题或建议。为了帮助我们排查，可以附上 App 版本、iOS 版本、设备型号和复现步骤；请勿发送密码、验证码或不必要的敏感信息。</p>
+        <p lang="en">Describe the issue or suggestion in your email. To help us investigate, include the app version, iOS version, device model, and steps to reproduce. Do not send passwords, verification codes, or unnecessary sensitive information.</p>
+        <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+      </section>
+
+      <section class="card" lang="zh-Hans" aria-labelledby="zh-help-title">
+        <h2 id="zh-help-title">常见问题</h2>
+        <h3>提醒没有显示</h3>
+        <p>请检查 iOS 设置中是否允许 HowLong 发送通知，并确认 App 内的截止提醒开关和该事项的提醒规则已开启。</p>
+        <h3>删除的事项在哪里？</h3>
+        <p>普通删除会将事项移入归档；你可以在“归档与历史”中恢复。选择“永久删除”后，事项及其附件会从设备中移除。</p>
+        <h3>识别出的日期不准确</h3>
+        <p>照片识别用于辅助录入。保存前请核对日期；如果格式含糊，应用会让你确认后再添加。</p>
+      </section>
+
+      <section class="card" lang="en" aria-labelledby="en-help-title">
+        <h2 id="en-help-title">Frequently Asked Questions</h2>
+        <h3>Why didn’t I receive a reminder?</h3>
+        <p>Check that iOS allows notifications for HowLong, and that deadline reminders and the item’s reminder rules are enabled in the app.</p>
+        <h3>Where are deleted items?</h3>
+        <p>Items removed normally are moved to Archive and can be restored from Archive &amp; History. Permanently deleted items and their attachments are removed from the device.</p>
+        <h3>Why is a recognized date incorrect?</h3>
+        <p>Photo recognition assists with entry. Review the date before saving; when a numeric date is ambiguous, the app asks you to confirm it.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>HowLong · 还有：到期提醒</strong>
+      <span>帮助与支持 / Help &amp; Support · 2026</span>
+    </footer>
+  </div>
+</body>
+</html>

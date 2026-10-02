@@ -22,6 +22,7 @@
     }
 
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
     body {
       min-width: 320px;
       margin: 0;
@@ -35,6 +36,9 @@
     .brand { color: var(--ink); font-size: 17px; font-weight: 700; letter-spacing: -.035em; text-decoration: none; }
     .brand span { margin-left: 6px; color: var(--blue); font-weight: 600; }
     .top-link { font-size: 14px; font-weight: 600; text-decoration: none; }
+    .language-picker { display: inline-flex; align-items: center; gap: 7px; color: #687b98; font-size: 12px; }
+    .language-picker select { max-width: 180px; padding: 7px 10px; border: 1px solid #d6e6ff; border-radius: 999px; background: rgba(255,255,255,.82); color: var(--ink); font: inherit; }
+    .language-picker select:focus-visible { outline: 3px solid #80aaff; outline-offset: 2px; }
     .hero, .card {
       border: 1px solid rgba(225, 234, 247, .92);
       border-radius: 26px;
@@ -47,6 +51,8 @@
     h1 { margin-bottom: 10px; color: var(--ink); font-size: clamp(36px, 7vw, 54px); font-weight: 720; letter-spacing: -.055em; line-height: 1.1; }
     .lead { max-width: 650px; margin: 0; color: #526681; font-size: 16px; }
     main { display: grid; gap: 18px; padding: 22px 0 42px; }
+    .support-main { display: grid; gap: 18px; padding: 22px 0 42px; }
+    .localized-support { display: grid; gap: 0; }
     .card { padding: clamp(22px, 4vw, 34px); }
     .card h2 { margin-bottom: 18px; color: var(--ink); font-size: 23px; letter-spacing: -.035em; line-height: 1.3; }
     .card h3 { margin: 22px 0 5px; color: #1b3768; font-size: 16px; line-height: 1.4; }
@@ -55,6 +61,7 @@
     .card p:last-child { margin-bottom: 0; }
     .email-card { border-color: #d7e5fb; background: linear-gradient(135deg, #fff, #f3f8ff); }
     .email { display: inline-block; margin: 5px 0 10px; font-size: 17px; font-weight: 700; overflow-wrap: anywhere; }
+    .translation-note { margin-top: 24px !important; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px !important; }
     .site-footer { display: flex; justify-content: space-between; gap: 14px; padding: 0 2px 28px; color: #8190a7; font-size: 12px; }
     .site-footer strong { color: #526681; font-weight: 650; }
     @media (max-width: 560px) {
@@ -62,6 +69,8 @@
       .topbar { min-height: 70px; }
       .brand { font-size: 15px; }
       .top-link { font-size: 12px; }
+      .language-picker { gap: 4px; font-size: 11px; }
+      .language-picker select { max-width: 135px; padding: 6px 8px; }
       .hero, .card { border-radius: 21px; }
       .hero { padding: 26px 22px; }
       .lead { font-size: 14px; }
@@ -75,24 +84,49 @@
   <div class="page-shell">
     <header class="topbar">
       <a class="brand" href="../" aria-label="HowLong privacy policy">HowLong<span>还有：到期提醒</span></a>
-      <a class="top-link" href="../">隐私政策 / Privacy Policy</a>
+      <div class="language-picker">
+        <label for="locale-picker">语言 / Language</label>
+        <select id="locale-picker" aria-label="语言 / Language">
+          <option value="zh-Hans">简体中文</option>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="en-US">English (US)</option>
+          <option value="en-GB">English (UK)</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es-ES">Español (España)</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+          <option value="mr">मराठी</option>
+          <option value="bn">বাংলা</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="tr">Türkçe</option>
+          <option value="te">తెలుగు</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
+      <a class="top-link" data-language-link="../" href="../">隐私政策 / Privacy Policy</a>
     </header>
 
-    <header class="hero">
+    <header class="hero" data-default-content>
       <p class="eyebrow">HOWLONG · SUPPORT</p>
       <h1>帮助与支持<br><span lang="en">Help &amp; Support</span></h1>
       <p class="lead">关于 HowLong 的使用、问题反馈或功能建议，请通过下方邮箱联系我们。<br lang="en">For help using HowLong, to report an issue, or to share a suggestion, contact us by email below.</p>
     </header>
 
     <main>
-      <section class="card email-card" aria-labelledby="contact-title">
+      <section class="card email-card" data-default-content aria-labelledby="contact-title">
         <h2 id="contact-title">联系支持 / Contact Support</h2>
         <p>请在邮件中说明你遇到的问题或建议。为了帮助我们排查，可以附上 App 版本、iOS 版本、设备型号和复现步骤；请勿发送密码、验证码或不必要的敏感信息。</p>
         <p lang="en">Describe the issue or suggestion in your email. To help us investigate, include the app version, iOS version, device model, and steps to reproduce. Do not send passwords, verification codes, or unnecessary sensitive information.</p>
         <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
       </section>
 
-      <section class="card" lang="zh-Hans" aria-labelledby="zh-help-title">
+      <section class="card" lang="zh-Hans" data-locale-section="zh-Hans" aria-labelledby="zh-help-title">
         <h2 id="zh-help-title">常见问题</h2>
         <h3>提醒没有显示</h3>
         <p>请检查 iOS 设置中是否允许 HowLong 发送通知，并确认 App 内的截止提醒开关和该事项的提醒规则已开启。</p>
@@ -102,7 +136,7 @@
         <p>照片识别用于辅助录入。保存前请核对日期；如果格式含糊，应用会让你确认后再添加。</p>
       </section>
 
-      <section class="card" lang="en" aria-labelledby="en-help-title">
+      <section class="card" lang="en" data-locale-section="en-US en-GB" aria-labelledby="en-help-title">
         <h2 id="en-help-title">Frequently Asked Questions</h2>
         <h3>Why didn’t I receive a reminder?</h3>
         <p>Check that iOS allows notifications for HowLong, and that deadline reminders and the item’s reminder rules are enabled in the app.</p>
@@ -111,6 +145,468 @@
         <h3>Why is a recognized date incorrect?</h3>
         <p>Photo recognition assists with entry. Review the date before saving; when a numeric date is ambiguous, the app asks you to confirm it.</p>
       </section>
+      <div id="additional-localizations">
+        <!-- GENERATED_SUPPORT_SECTIONS_START -->
+<section class="localized-support" id="support-zh-Hant" lang="zh-Hant" dir="ltr" data-locale-section="zh-Hant" data-page-title="協助與支援" data-summary="如需 HowLong 使用協助、回報問題或提出功能建議，請透過下方電子郵件聯絡我們。" aria-labelledby="support-title-zh-Hant">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-zh-Hant">協助與支援</h1>
+      <p class="lead">如需 HowLong 使用協助、回報問題或提出功能建議，請透過下方電子郵件聯絡我們。</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>聯絡支援</h2>
+      <p>請在郵件中說明問題或建議。為方便我們排查，請附上 App 版本、iOS 版本、裝置型號及重現步驟；請勿傳送密碼、驗證碼或不必要的敏感資訊。</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>常見問題</h2>
+      <h3>沒有收到提醒，該怎麼辦？</h3>
+      <p>請確認 iOS 設定允許 HowLong 傳送通知，並確認 App 內的到期提醒開關及該事項的提醒規則已啟用。</p>
+      <h3>刪除的事項在哪裡？</h3>
+      <p>一般刪除會將事項移至封存，你可以從「封存與歷史」還原。選擇「永久刪除」後，事項及附件會從裝置移除。</p>
+      <h3>為什麼辨識出的日期不正確？</h3>
+      <p>照片辨識是輔助輸入工具。儲存前請核對日期；數字日期格式有歧義時，App 會請你確認後再新增。</p>
+      <p class="translation-note">本頁為機器輔助翻譯，尚待母語人士審校。如發現內容不一致，請透過支援頁面聯絡我們。</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-de" lang="de" dir="ltr" data-locale-section="de" data-page-title="Hilfe &amp; Support" data-summary="Bei Fragen zur Nutzung von HowLong, zum Melden eines Problems oder für Funktionsvorschläge erreichen Sie uns per E-Mail." aria-labelledby="support-title-de">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-de">Hilfe &amp; Support</h1>
+      <p class="lead">Bei Fragen zur Nutzung von HowLong, zum Melden eines Problems oder für Funktionsvorschläge erreichen Sie uns per E-Mail.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Support kontaktieren</h2>
+      <p>Beschreiben Sie Ihr Problem oder Ihren Vorschlag in der E-Mail. Für die Fehlersuche helfen App-Version, iOS-Version, Gerätemodell und Schritte zur Reproduktion. Senden Sie keine Passwörter, Bestätigungscodes oder unnötigen sensiblen Informationen.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Häufige Fragen</h2>
+      <h3>Warum habe ich keine Erinnerung erhalten?</h3>
+      <p>Prüfen Sie, ob iOS Mitteilungen für HowLong erlaubt und sowohl die Erinnerungsfunktion für Fristen als auch die Regeln des Eintrags in der App aktiviert sind.</p>
+      <h3>Wo finde ich gelöschte Einträge?</h3>
+      <p>Normal gelöschte Einträge werden ins Archiv verschoben und können unter „Archiv &amp; Verlauf“ wiederhergestellt werden. „Dauerhaft löschen“ entfernt den Eintrag und seine Anhänge vom Gerät.</p>
+      <h3>Warum ist ein erkanntes Datum falsch?</h3>
+      <p>Die Fotoerkennung unterstützt die Eingabe. Prüfen Sie das Datum vor dem Speichern. Bei mehrdeutigen Zahlenformaten bittet die App Sie vor dem Hinzufügen um eine Bestätigung.</p>
+      <p class="translation-note">Diese Übersetzung wurde maschinell erstellt und muss noch von Muttersprachlern geprüft werden. Wenn Ihnen eine Abweichung auffällt, kontaktieren Sie uns bitte über die Support-Seite.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-fr" lang="fr" dir="ltr" data-locale-section="fr" data-page-title="Aide et assistance" data-summary="Pour obtenir de l’aide sur HowLong, signaler un problème ou proposer une fonctionnalité, contactez-nous par e-mail ci-dessous." aria-labelledby="support-title-fr">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-fr">Aide et assistance</h1>
+      <p class="lead">Pour obtenir de l’aide sur HowLong, signaler un problème ou proposer une fonctionnalité, contactez-nous par e-mail ci-dessous.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Contacter l’assistance</h2>
+      <p>Décrivez le problème ou votre suggestion dans votre e-mail. Pour faciliter l’analyse, indiquez la version de l’app et d’iOS, le modèle de l’appareil et les étapes pour reproduire le problème. N’envoyez pas de mots de passe, de codes de vérification ni d’informations sensibles inutiles.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Questions fréquentes</h2>
+      <h3>Pourquoi n’ai-je pas reçu de rappel ?</h3>
+      <p>Vérifiez qu’iOS autorise les notifications de HowLong et que les rappels d’échéance ainsi que les règles de rappel de l’élément sont activés dans l’app.</p>
+      <h3>Où se trouvent les éléments supprimés ?</h3>
+      <p>Une suppression normale déplace l’élément dans les archives ; vous pouvez le restaurer depuis « Archives et historique ». « Supprimer définitivement » retire l’élément et ses pièces jointes de l’appareil.</p>
+      <h3>Pourquoi la date reconnue est-elle incorrecte ?</h3>
+      <p>La reconnaissance photo aide à la saisie. Vérifiez la date avant de l’enregistrer ; si un format numérique est ambigu, l’app vous demande de confirmer avant l’ajout.</p>
+      <p class="translation-note">Cette traduction a été réalisée avec l’aide d’un outil automatique et doit encore être vérifiée par des locuteurs natifs. En cas de différence, contactez-nous depuis la page d’assistance.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-es-ES" lang="es-ES" dir="ltr" data-locale-section="es-ES" data-page-title="Ayuda y soporte" data-summary="Para recibir ayuda con HowLong, informar de un problema o sugerir una función, escríbenos al correo que aparece abajo." aria-labelledby="support-title-es-ES">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-es-ES">Ayuda y soporte</h1>
+      <p class="lead">Para recibir ayuda con HowLong, informar de un problema o sugerir una función, escríbenos al correo que aparece abajo.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Contactar con soporte</h2>
+      <p>Describe el problema o la sugerencia en tu correo. Para ayudarnos a investigarlo, incluye la versión de la app, la versión de iOS, el modelo del dispositivo y los pasos para reproducirlo. No envíes contraseñas, códigos de verificación ni información sensible innecesaria.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Preguntas frecuentes</h2>
+      <h3>¿Por qué no he recibido un recordatorio?</h3>
+      <p>Comprueba que iOS permite las notificaciones de HowLong y que están activados tanto los recordatorios de vencimiento como las reglas de recordatorio del elemento en la app.</p>
+      <h3>¿Dónde están los elementos eliminados?</h3>
+      <p>Al eliminar un elemento normalmente, se mueve al archivo y puedes restaurarlo desde «Archivo e historial». «Eliminar permanentemente» quita el elemento y sus archivos adjuntos del dispositivo.</p>
+      <h3>¿Por qué es incorrecta la fecha reconocida?</h3>
+      <p>El reconocimiento de fotos ayuda a introducir datos. Revisa la fecha antes de guardarla; si un formato numérico es ambiguo, la app te pide confirmación antes de añadirla.</p>
+      <p class="translation-note">Esta traducción se ha generado con ayuda automática y aún debe ser revisada por hablantes nativos. Si detectas alguna diferencia, contáctanos desde la página de asistencia.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-pt-BR" lang="pt-BR" dir="ltr" data-locale-section="pt-BR" data-page-title="Ajuda e Suporte" data-summary="Para obter ajuda com o HowLong, informar um problema ou sugerir um recurso, fale conosco pelo e-mail abaixo." aria-labelledby="support-title-pt-BR">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-pt-BR">Ajuda e Suporte</h1>
+      <p class="lead">Para obter ajuda com o HowLong, informar um problema ou sugerir um recurso, fale conosco pelo e-mail abaixo.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Fale com o suporte</h2>
+      <p>Descreva o problema ou a sugestão no e-mail. Para ajudar na análise, inclua as versões do app e do iOS, o modelo do dispositivo e as etapas para reproduzir o problema. Não envie senhas, códigos de verificação nem informações confidenciais desnecessárias.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Perguntas frequentes</h2>
+      <h3>Por que não recebi um lembrete?</h3>
+      <p>Verifique se o iOS permite notificações do HowLong e se os lembretes de vencimento e as regras de lembrete do item estão ativados no app.</p>
+      <h3>Onde encontro os itens excluídos?</h3>
+      <p>A exclusão normal move o item para o Arquivo, onde ele pode ser restaurado em “Arquivo e Histórico”. “Apagar permanentemente” remove o item e os anexos do dispositivo.</p>
+      <h3>Por que a data reconhecida está incorreta?</h3>
+      <p>O reconhecimento de fotos ajuda no preenchimento. Confira a data antes de salvar; quando um formato numérico for ambíguo, o app pedirá sua confirmação antes de adicionar.</p>
+      <p class="translation-note">Esta tradução foi gerada com auxílio automático e ainda precisa de revisão por falantes nativos. Se encontrar alguma divergência, entre em contato pela página de suporte.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-ru" lang="ru" dir="ltr" data-locale-section="ru" data-page-title="Помощь и поддержка" data-summary="Если вам нужна помощь с HowLong, вы хотите сообщить о проблеме или предложить функцию, напишите нам по адресу ниже." aria-labelledby="support-title-ru">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-ru">Помощь и поддержка</h1>
+      <p class="lead">Если вам нужна помощь с HowLong, вы хотите сообщить о проблеме или предложить функцию, напишите нам по адресу ниже.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Связаться с поддержкой</h2>
+      <p>Опишите проблему или предложение в письме. Для проверки укажите версии приложения и iOS, модель устройства и шаги для воспроизведения. Не отправляйте пароли, коды подтверждения и ненужные конфиденциальные сведения.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Часто задаваемые вопросы</h2>
+      <h3>Почему я не получил напоминание?</h3>
+      <p>Проверьте, разрешены ли уведомления HowLong в настройках iOS и включены ли в приложении напоминания о сроках и правила напоминаний для записи.</p>
+      <h3>Где находятся удалённые записи?</h3>
+      <p>Обычное удаление перемещает запись в архив; её можно восстановить в разделе «Архив и история». «Удалить навсегда» удаляет запись и вложения с устройства.</p>
+      <h3>Почему распознанная дата неверна?</h3>
+      <p>Распознавание фото помогает при вводе. Проверьте дату перед сохранением; если числовой формат неоднозначен, приложение попросит подтвердить дату перед добавлением.</p>
+      <p class="translation-note">Этот перевод подготовлен автоматически и еще требует проверки носителями языка. Если вы заметили расхождение, свяжитесь с нами через страницу поддержки.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-ar" lang="ar" dir="rtl" data-locale-section="ar" data-page-title="المساعدة والدعم" data-summary="للحصول على مساعدة في استخدام HowLong أو الإبلاغ عن مشكلة أو اقتراح ميزة، راسلنا عبر البريد الإلكتروني أدناه." aria-labelledby="support-title-ar">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-ar">المساعدة والدعم</h1>
+      <p class="lead">للحصول على مساعدة في استخدام HowLong أو الإبلاغ عن مشكلة أو اقتراح ميزة، راسلنا عبر البريد الإلكتروني أدناه.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>التواصل مع الدعم</h2>
+      <p>اشرح المشكلة أو الاقتراح في رسالتك. لمساعدتنا في التحقق، أضف إصدار التطبيق وiOS وطراز الجهاز وخطوات إعادة المشكلة. لا ترسل كلمات مرور أو رموز تحقق أو معلومات حساسة غير ضرورية.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>الأسئلة الشائعة</h2>
+      <h3>لماذا لم يصلني تذكير؟</h3>
+      <p>تحقق من أن إعدادات iOS تسمح بإشعارات HowLong، ومن تشغيل تذكيرات المواعيد وقواعد التذكير الخاصة بالعنصر داخل التطبيق.</p>
+      <h3>أين أجد العناصر المحذوفة؟</h3>
+      <p>ينقل الحذف العادي العنصر إلى الأرشيف، ويمكنك استعادته من «الأرشيف والسجل». أما «الحذف نهائياً» فيزيل العنصر ومرفقاته من الجهاز.</p>
+      <h3>لماذا التاريخ الذي تعرّف عليه التطبيق غير صحيح؟</h3>
+      <p>يساعد التعرّف على الصور في الإدخال. راجع التاريخ قبل الحفظ؛ وإذا كان تنسيق التاريخ الرقمي ملتبساً، سيطلب التطبيق تأكيدك قبل الإضافة.</p>
+      <p class="translation-note">أُعدّت هذه الترجمة بمساعدة آلية وما زالت بحاجة إلى مراجعة متحدثين أصليين. إذا لاحظت اختلافًا، فتواصل معنا عبر صفحة الدعم.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-hi" lang="hi" dir="ltr" data-locale-section="hi" data-page-title="मदद और सहायता" data-summary="HowLong इस्तेमाल करने में मदद, समस्या की रिपोर्ट या किसी सुविधा का सुझाव देने के लिए नीचे दिए ईमेल पर संपर्क करें।" aria-labelledby="support-title-hi">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-hi">मदद और सहायता</h1>
+      <p class="lead">HowLong इस्तेमाल करने में मदद, समस्या की रिपोर्ट या किसी सुविधा का सुझाव देने के लिए नीचे दिए ईमेल पर संपर्क करें।</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>सहायता से संपर्क करें</h2>
+      <p>ईमेल में समस्या या सुझाव बताएं। जाँच में मदद के लिए ऐप और iOS संस्करण, डिवाइस मॉडल और समस्या दोहराने के चरण शामिल करें। पासवर्ड, सत्यापन कोड या अनावश्यक संवेदनशील जानकारी न भेजें।</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>अक्सर पूछे जाने वाले प्रश्न</h2>
+      <h3>मुझे रिमाइंडर क्यों नहीं मिला?</h3>
+      <p>जाँचें कि iOS में HowLong की सूचनाएँ अनुमति प्राप्त हैं और ऐप में समाप्ति रिमाइंडर तथा उस आइटम के रिमाइंडर नियम चालू हैं।</p>
+      <h3>मिटाए गए आइटम कहाँ मिलेंगे?</h3>
+      <p>सामान्य रूप से हटाए गए आइटम संग्रह में जाते हैं और “संग्रह और इतिहास” से वापस लाए जा सकते हैं। “हमेशा के लिए मिटाएँ” आइटम और अटैचमेंट को डिवाइस से हटा देता है।</p>
+      <h3>पहचानी गई तारीख गलत क्यों है?</h3>
+      <p>तस्वीर पहचान केवल जानकारी भरने में मदद करती है। सहेजने से पहले तारीख जाँचें; संख्या वाली तारीख अस्पष्ट होने पर ऐप जोड़ने से पहले पुष्टि माँगता है।</p>
+      <p class="translation-note">यह अनुवाद मशीन की सहायता से तैयार किया गया है और इसकी समीक्षा अभी मूल भाषा के वक्ताओं से होनी है। कोई अंतर दिखे तो सहायता पृष्ठ से हमसे संपर्क करें।</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-mr" lang="mr" dir="ltr" data-locale-section="mr" data-page-title="मदत आणि सहाय्य" data-summary="HowLong वापरण्यासाठी मदत, समस्येची तक्रार किंवा सुविधेची सूचना देण्यासाठी खालील ईमेलवर संपर्क करा." aria-labelledby="support-title-mr">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-mr">मदत आणि सहाय्य</h1>
+      <p class="lead">HowLong वापरण्यासाठी मदत, समस्येची तक्रार किंवा सुविधेची सूचना देण्यासाठी खालील ईमेलवर संपर्क करा.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>सहाय्याशी संपर्क</h2>
+      <p>ईमेलमध्ये समस्या किंवा सूचना स्पष्ट करा. तपासासाठी अॅप व iOS आवृत्ती, डिव्हाइसचे मॉडेल आणि समस्या पुन्हा कशी निर्माण करावी हे लिहा. पासवर्ड, पडताळणी कोड किंवा अनावश्यक संवेदनशील माहिती पाठवू नका.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>वारंवार विचारले जाणारे प्रश्न</h2>
+      <h3>मला स्मरणपत्र का मिळाले नाही?</h3>
+      <p>iOS मध्ये HowLong सूचनांना परवानगी आहे का आणि अॅपमधील मुदत स्मरणपत्रे तसेच त्या नोंदीचे स्मरणपत्र नियम सुरू आहेत का ते तपासा.</p>
+      <h3>हटवलेल्या नोंदी कुठे आहेत?</h3>
+      <p>सामान्य हटविलेली नोंद संग्रहात जाते आणि “संग्रह व इतिहास” मधून पुनर्संचयित करता येते. “कायमचे हटवा” निवडल्यास नोंद व संलग्नक डिव्हाइसवरून काढले जातात.</p>
+      <h3>ओळखलेली तारीख चुकीची का आहे?</h3>
+      <p>फोटो ओळख माहिती भरण्यास मदत करते. जतन करण्यापूर्वी तारीख तपासा; अंकांची तारीख संदिग्ध असल्यास अॅप जोडण्यापूर्वी पुष्टी मागते.</p>
+      <p class="translation-note">हे भाषांतर मशीनच्या मदतीने तयार केले आहे आणि मूळ भाषिकांकडून त्याचे पुनरावलोकन होणे बाकी आहे. काही फरक आढळल्यास सहाय्य पृष्ठावरून आमच्याशी संपर्क साधा.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-bn" lang="bn" dir="ltr" data-locale-section="bn" data-page-title="সহায়তা ও সাপোর্ট" data-summary="HowLong ব্যবহারে সাহায্য, সমস্যা জানাতে বা ফিচারের পরামর্শ দিতে নিচের ইমেইলে যোগাযোগ করুন।" aria-labelledby="support-title-bn">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-bn">সহায়তা ও সাপোর্ট</h1>
+      <p class="lead">HowLong ব্যবহারে সাহায্য, সমস্যা জানাতে বা ফিচারের পরামর্শ দিতে নিচের ইমেইলে যোগাযোগ করুন।</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>সাপোর্টে যোগাযোগ</h2>
+      <p>ইমেইলে সমস্যা বা পরামর্শটি লিখুন। খোঁজ নিতে সুবিধার জন্য অ্যাপ ও iOS সংস্করণ, ডিভাইসের মডেল এবং সমস্যাটি আবার ঘটানোর ধাপ দিন। পাসওয়ার্ড, যাচাইকরণ কোড বা অপ্রয়োজনীয় সংবেদনশীল তথ্য পাঠাবেন না।</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>সাধারণ প্রশ্ন</h2>
+      <h3>রিমাইন্ডার পেলাম না কেন?</h3>
+      <p>iOS-এ HowLong-এর বিজ্ঞপ্তি অনুমোদিত কি না এবং অ্যাপে মেয়াদ রিমাইন্ডার ও ওই আইটেমের রিমাইন্ডার নিয়ম চালু আছে কি না দেখুন।</p>
+      <h3>মুছে ফেলা আইটেম কোথায়?</h3>
+      <p>সাধারণভাবে মুছলে আইটেম আর্কাইভে যায় এবং “আর্কাইভ ও ইতিহাস” থেকে ফিরিয়ে আনা যায়। “স্থায়ীভাবে মুছুন” আইটেম ও সংযুক্তি ডিভাইস থেকে সরিয়ে দেয়।</p>
+      <h3>শনাক্ত করা তারিখটি ভুল কেন?</h3>
+      <p>ছবি শনাক্তকরণ তথ্য লিখতে সহায়তা করে। সংরক্ষণের আগে তারিখ মিলিয়ে নিন; সংখ্যার তারিখ অস্পষ্ট হলে যোগ করার আগে অ্যাপ নিশ্চিত হতে বলে।</p>
+      <p class="translation-note">এই অনুবাদটি যন্ত্রের সহায়তায় তৈরি করা হয়েছে এবং স্থানীয় ভাষাভাষীদের পর্যালোচনা এখনও বাকি। কোনো অমিল দেখলে সহায়তা পৃষ্ঠা থেকে যোগাযোগ করুন।</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-id" lang="id" dir="ltr" data-locale-section="id" data-page-title="Bantuan &amp; Dukungan" data-summary="Untuk bantuan menggunakan HowLong, melaporkan masalah, atau menyarankan fitur, hubungi kami melalui email di bawah." aria-labelledby="support-title-id">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-id">Bantuan &amp; Dukungan</h1>
+      <p class="lead">Untuk bantuan menggunakan HowLong, melaporkan masalah, atau menyarankan fitur, hubungi kami melalui email di bawah.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Hubungi Dukungan</h2>
+      <p>Jelaskan masalah atau saran Anda dalam email. Agar kami dapat memeriksanya, sertakan versi app, versi iOS, model perangkat, dan langkah untuk mengulangi masalah. Jangan kirim kata sandi, kode verifikasi, atau informasi sensitif yang tidak diperlukan.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Pertanyaan Umum</h2>
+      <h3>Mengapa saya tidak menerima pengingat?</h3>
+      <p>Pastikan iOS mengizinkan notifikasi HowLong dan pengingat tanggal kedaluwarsa serta aturan pengingat item telah diaktifkan di app.</p>
+      <h3>Di mana item yang dihapus?</h3>
+      <p>Penghapusan biasa memindahkan item ke Arsip dan item dapat dipulihkan dari “Arsip &amp; Riwayat”. “Hapus Permanen” menghapus item dan lampirannya dari perangkat.</p>
+      <h3>Mengapa tanggal yang dikenali salah?</h3>
+      <p>Pengenalan foto membantu memasukkan data. Periksa tanggal sebelum menyimpan; jika format angka ambigu, app akan meminta konfirmasi sebelum menambahkan.</p>
+      <p class="translation-note">Terjemahan ini dibuat dengan bantuan mesin dan masih perlu ditinjau oleh penutur asli. Jika menemukan perbedaan, hubungi kami melalui halaman dukungan.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-vi" lang="vi" dir="ltr" data-locale-section="vi" data-page-title="Trợ giúp &amp; Hỗ trợ" data-summary="Để được trợ giúp khi dùng HowLong, báo cáo sự cố hoặc đề xuất tính năng, hãy liên hệ với chúng tôi qua email bên dưới." aria-labelledby="support-title-vi">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-vi">Trợ giúp &amp; Hỗ trợ</h1>
+      <p class="lead">Để được trợ giúp khi dùng HowLong, báo cáo sự cố hoặc đề xuất tính năng, hãy liên hệ với chúng tôi qua email bên dưới.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Liên hệ bộ phận hỗ trợ</h2>
+      <p>Hãy mô tả sự cố hoặc đề xuất trong email. Để chúng tôi kiểm tra, vui lòng ghi phiên bản ứng dụng, phiên bản iOS, kiểu thiết bị và các bước tái hiện sự cố. Không gửi mật khẩu, mã xác minh hoặc thông tin nhạy cảm không cần thiết.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Câu hỏi thường gặp</h2>
+      <h3>Tại sao tôi không nhận được nhắc nhở?</h3>
+      <p>Kiểm tra xem iOS có cho phép thông báo của HowLong không, đồng thời bật nhắc hạn và quy tắc nhắc nhở của mục trong ứng dụng.</p>
+      <h3>Các mục đã xóa nằm ở đâu?</h3>
+      <p>Xóa thông thường chuyển mục vào Lưu trữ; bạn có thể khôi phục trong “Lưu trữ &amp; Lịch sử”. “Xóa vĩnh viễn” sẽ xóa mục và tệp đính kèm khỏi thiết bị.</p>
+      <h3>Tại sao ngày được nhận dạng không chính xác?</h3>
+      <p>Nhận dạng ảnh hỗ trợ nhập dữ liệu. Hãy kiểm tra ngày trước khi lưu; nếu định dạng ngày bằng số không rõ ràng, ứng dụng sẽ yêu cầu bạn xác nhận trước khi thêm.</p>
+      <p class="translation-note">Bản dịch này được tạo với sự hỗ trợ của máy và vẫn cần người bản ngữ xem lại. Nếu phát hiện điểm khác biệt, hãy liên hệ qua trang hỗ trợ.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-ja" lang="ja" dir="ltr" data-locale-section="ja" data-page-title="ヘルプとサポート" data-summary="HowLongの使い方についての質問、問題の報告、機能の提案は、下記のメールアドレスへご連絡ください。" aria-labelledby="support-title-ja">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-ja">ヘルプとサポート</h1>
+      <p class="lead">HowLongの使い方についての質問、問題の報告、機能の提案は、下記のメールアドレスへご連絡ください。</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>サポートへのお問い合わせ</h2>
+      <p>メールには問題や提案の内容を記載してください。調査のため、アプリとiOSのバージョン、デバイスのモデル、再現手順を添えてください。パスワード、確認コード、不要な機密情報は送らないでください。</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>よくある質問</h2>
+      <h3>リマインダーが届かないのはなぜですか？</h3>
+      <p>iOSでHowLongの通知が許可されていることと、アプリ内の期限リマインダーおよび該当アイテムのリマインダールールが有効であることをご確認ください。</p>
+      <h3>削除したアイテムはどこにありますか？</h3>
+      <p>通常の削除ではアイテムはアーカイブに移動し、「アーカイブと履歴」から復元できます。「完全に削除」すると、アイテムと添付ファイルがデバイスから削除されます。</p>
+      <h3>認識された日付が正しくないのはなぜですか？</h3>
+      <p>写真認識は入力を補助する機能です。保存する前に日付を確認してください。数字の日付形式が曖昧な場合、アプリは追加前に確認を求めます。</p>
+      <p class="translation-note">この翻訳は機械翻訳を利用しており、ネイティブによる確認が必要です。内容に相違がある場合は、サポートページからご連絡ください。</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-ko" lang="ko" dir="ltr" data-locale-section="ko" data-page-title="도움말 및 지원" data-summary="HowLong 사용에 관한 도움, 문제 신고 또는 기능 제안은 아래 이메일로 문의해 주세요." aria-labelledby="support-title-ko">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-ko">도움말 및 지원</h1>
+      <p class="lead">HowLong 사용에 관한 도움, 문제 신고 또는 기능 제안은 아래 이메일로 문의해 주세요.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>지원 문의</h2>
+      <p>이메일에 문제나 제안을 설명해 주세요. 확인을 위해 앱 및 iOS 버전, 기기 모델, 재현 단계를 적어 주세요. 암호, 인증 코드 또는 불필요한 민감 정보는 보내지 마세요.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>자주 묻는 질문</h2>
+      <h3>미리 알림을 받지 못한 이유는 무엇인가요?</h3>
+      <p>iOS에서 HowLong 알림이 허용되어 있는지, 앱에서 기한 미리 알림과 해당 항목의 미리 알림 규칙이 켜져 있는지 확인하세요.</p>
+      <h3>삭제한 항목은 어디에 있나요?</h3>
+      <p>일반 삭제한 항목은 보관함으로 이동하며 “보관 및 기록”에서 복원할 수 있습니다. “영구 삭제”를 선택하면 항목과 첨부파일이 기기에서 제거됩니다.</p>
+      <h3>인식된 날짜가 잘못된 이유는 무엇인가요?</h3>
+      <p>사진 인식은 입력을 돕는 기능입니다. 저장하기 전에 날짜를 확인하세요. 숫자 날짜 형식이 모호하면 앱에서 추가 전에 확인을 요청합니다.</p>
+      <p class="translation-note">이 번역은 기계 번역의 도움을 받아 작성되었으며 원어민 검토가 필요합니다. 내용에 차이가 있으면 지원 페이지를 통해 문의해 주세요.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-tr" lang="tr" dir="ltr" data-locale-section="tr" data-page-title="Yardım ve Destek" data-summary="HowLong&#x27;u kullanma konusunda yardım almak, sorun bildirmek veya özellik önermek için aşağıdaki e-posta adresinden bize ulaşın." aria-labelledby="support-title-tr">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-tr">Yardım ve Destek</h1>
+      <p class="lead">HowLong&#x27;u kullanma konusunda yardım almak, sorun bildirmek veya özellik önermek için aşağıdaki e-posta adresinden bize ulaşın.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>Destek ekibiyle iletişim</h2>
+      <p>E-postanızda sorunu veya öneriyi açıklayın. İncelememize yardımcı olmak için uygulama ve iOS sürümünü, aygıt modelini ve sorunu yeniden oluşturma adımlarını ekleyin. Parola, doğrulama kodu veya gereksiz hassas bilgiler göndermeyin.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>Sık Sorulan Sorular</h2>
+      <h3>Hatırlatıcı neden gelmedi?</h3>
+      <p>iOS ayarlarında HowLong için bildirimlere izin verildiğini, ayrıca uygulamadaki son tarih hatırlatıcılarının ve ilgili kaydın hatırlatıcı kurallarının açık olduğunu kontrol edin.</p>
+      <h3>Sildiğim kayıtlar nerede?</h3>
+      <p>Normal silme işlemi kayıtları Arşiv&#x27;e taşır; bunları “Arşiv ve Geçmiş” bölümünden geri yükleyebilirsiniz. “Kalıcı Olarak Sil” seçildiğinde kayıt ve ekleri aygıttan kaldırılır.</p>
+      <h3>Tanınan tarih neden yanlış?</h3>
+      <p>Fotoğrafla tanıma, veri girişine yardımcı olur. Kaydetmeden önce tarihi kontrol edin; sayısal tarih biçimi belirsiz olduğunda uygulama eklemeden önce onay ister.</p>
+      <p class="translation-note">Bu çeviri makine yardımıyla hazırlanmıştır ve ana dili Türkçe olan kişilerce incelenmesi gerekir. Bir farklılık fark ederseniz destek sayfasından bize ulaşın.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-te" lang="te" dir="ltr" data-locale-section="te" data-page-title="సహాయం మరియు మద్దతు" data-summary="HowLong ఉపయోగంలో సహాయం, సమస్య నివేదిక లేదా ఫీచర్ సూచన కోసం క్రింది ఇమెయిల్ ద్వారా మమ్మల్ని సంప్రదించండి." aria-labelledby="support-title-te">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-te">సహాయం మరియు మద్దతు</h1>
+      <p class="lead">HowLong ఉపయోగంలో సహాయం, సమస్య నివేదిక లేదా ఫీచర్ సూచన కోసం క్రింది ఇమెయిల్ ద్వారా మమ్మల్ని సంప్రదించండి.</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>మద్దతును సంప్రదించండి</h2>
+      <p>మీ ఇమెయిల్‌లో సమస్య లేదా సూచనను వివరించండి. పరిశీలనకు సహాయంగా యాప్ మరియు iOS వెర్షన్, పరికరం మోడల్, సమస్యను మళ్లీ చూపించే దశలను చేర్చండి. పాస్‌వర్డ్‌లు, ధృవీకరణ కోడ్‌లు లేదా అవసరం లేని సున్నితమైన సమాచారాన్ని పంపవద్దు.</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>తరచుగా అడిగే ప్రశ్నలు</h2>
+      <h3>నాకు రిమైండర్ ఎందుకు రాలేదు?</h3>
+      <p>iOS సెట్టింగ్‌లలో HowLong నోటిఫికేషన్‌లకు అనుమతి ఉందో, యాప్‌లో గడువు రిమైండర్‌లు మరియు ఆ అంశం రిమైండర్ నియమాలు ఆన్‌లో ఉన్నాయో తనిఖీ చేయండి.</p>
+      <h3>తొలగించిన అంశాలు ఎక్కడ ఉంటాయి?</h3>
+      <p>సాధారణంగా తొలగించిన అంశాలు ఆర్కైవ్‌కు వెళ్తాయి; “ఆర్కైవ్ మరియు చరిత్ర” నుంచి పునరుద్ధరించవచ్చు. “శాశ్వతంగా తొలగించు” ఎంచుకుంటే అంశం మరియు దాని జోడింపులు పరికరం నుంచి తొలగించబడతాయి.</p>
+      <h3>గుర్తించిన తేదీ తప్పుగా ఎందుకు ఉంది?</h3>
+      <p>ఫోటో గుర్తింపు నమోదు చేయడంలో సహాయం చేస్తుంది. భద్రపరచే ముందు తేదీని తనిఖీ చేయండి; సంఖ్యల తేదీ ఆకృతి సందిగ్ధంగా ఉంటే జోడించే ముందు యాప్ నిర్ధారణ అడుగుతుంది.</p>
+      <p class="translation-note">ఈ అనువాదం యంత్ర సహాయంతో రూపొందించబడింది; మాతృభాష మాట్లాడేవారి సమీక్ష ఇంకా అవసరం. ఏదైనా తేడా కనిపిస్తే మద్దతు పేజీ ద్వారా మమ్మల్ని సంప్రదించండి.</p>
+    </section>
+  </div>
+</section>
+
+<section class="localized-support" id="support-ur" lang="ur" dir="rtl" data-locale-section="ur" data-page-title="مدد اور معاونت" data-summary="HowLong استعمال کرنے میں مدد، مسئلے کی اطلاع یا فیچر کی تجویز کے لیے نیچے دیے گئے ای میل پتے پر رابطہ کریں۔" aria-labelledby="support-title-ur">
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">HOWLONG · SUPPORT</p>
+      <h1 id="support-title-ur">مدد اور معاونت</h1>
+      <p class="lead">HowLong استعمال کرنے میں مدد، مسئلے کی اطلاع یا فیچر کی تجویز کے لیے نیچے دیے گئے ای میل پتے پر رابطہ کریں۔</p>
+    </div>
+  </header>
+  <div class="support-main">
+    <section class="card email-card">
+      <h2>معاونت سے رابطہ</h2>
+      <p>اپنی ای میل میں مسئلے یا تجویز کی وضاحت کریں۔ جانچ میں مدد کے لیے ایپ اور iOS ورژن، آلے کا ماڈل اور مسئلہ دوبارہ پیدا کرنے کے مراحل شامل کریں۔ پاس ورڈ، تصدیقی کوڈ یا غیر ضروری حساس معلومات نہ بھیجیں۔</p>
+      <a class="email" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a>
+    </section>
+    <section class="card">
+      <h2>اکثر پوچھے جانے والے سوالات</h2>
+      <h3>مجھے یاددہانی کیوں نہیں ملی؟</h3>
+      <p>iOS سیٹنگز میں تصدیق کریں کہ HowLong کو اطلاعات بھیجنے کی اجازت ہے اور ایپ میں آخری تاریخ کی یاددہانی اور متعلقہ شے کے یاددہانی قواعد فعال ہیں۔</p>
+      <h3>حذف شدہ اشیا کہاں ہیں؟</h3>
+      <p>عام طور پر حذف کرنے سے اشیا محفوظ شدہ فہرست میں چلی جاتی ہیں اور “محفوظ شدہ اور تاریخ” سے بحال کی جا سکتی ہیں۔ “مستقل طور پر حذف کریں” منتخب کرنے سے شے اور منسلکات آلے سے ہٹ جاتے ہیں۔</p>
+      <h3>شناخت کی گئی تاریخ غلط کیوں ہے؟</h3>
+      <p>تصویر کی شناخت اندراج میں مدد دیتی ہے۔ محفوظ کرنے سے پہلے تاریخ دیکھ لیں؛ عددی تاریخ کا فارمیٹ مبہم ہو تو ایپ شامل کرنے سے پہلے تصدیق مانگتی ہے۔</p>
+      <p class="translation-note">یہ ترجمہ مشینی مدد سے تیار کیا گیا ہے اور اسے مادری زبان بولنے والوں کی جانچ درکار ہے۔ کوئی فرق نظر آئے تو معاونت کے صفحے سے رابطہ کریں۔</p>
+    </section>
+  </div>
+</section>
+        <!-- GENERATED_SUPPORT_SECTIONS_END -->
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -118,5 +614,6 @@
       <span>帮助与支持 / Help &amp; Support · 2026</span>
     </footer>
   </div>
+  <script src="../locale-switcher.js" defer></script>
 </body>
 </html>

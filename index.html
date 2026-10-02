@@ -26,6 +26,7 @@
     }
 
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
 
     html { scroll-behavior: smooth; }
 
@@ -95,6 +96,9 @@
     }
 
     .language-nav a:first-child { background: #e9f1ff; color: var(--blue); }
+    .language-nav label { padding-left: 9px; color: var(--muted); font-size: 12px; }
+    .language-nav select { max-width: 190px; padding: 7px 10px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font: inherit; font-size: 13px; }
+    .language-nav select:focus-visible { outline: 3px solid #80aaff; outline-offset: 2px; }
 
     .hero {
       position: relative;
@@ -206,6 +210,7 @@
     .policy-copy li::marker { color: #5e8fee; }
 
     .contact-link { overflow-wrap: anywhere; }
+    .translation-note { margin-top: 30px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted) !important; font-size: 12px !important; }
 
     .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 2px 34px; color: #8190a7; font-size: 12px; }
     .site-footer strong { color: #526681; font-weight: 650; }
@@ -253,7 +258,7 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#zh">跳到隐私政策正文</a>
+  <a class="skip-link" href="#policy-content">跳到隐私政策正文 / Skip to policy</a>
   <div class="page-shell">
     <header class="topbar">
       <a class="brand-lockup" href="#top" aria-label="还有：到期提醒 HowLong">
@@ -276,17 +281,39 @@
         <span class="brand-name">HowLong<span>还有</span></span>
       </a>
       <nav class="language-nav" aria-label="Language">
-        <a href="#zh">简体中文</a>
-        <a href="#en">English</a>
+        <a class="top-link" data-language-link="support/" href="support/">帮助与支持 / Help &amp; Support</a>
+        <label for="locale-picker">语言 / Language</label>
+        <select id="locale-picker" aria-label="语言 / Language">
+          <option value="zh-Hans">简体中文</option>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="en-US">English (US)</option>
+          <option value="en-GB">English (UK)</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es-ES">Español (España)</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+          <option value="mr">मराठी</option>
+          <option value="bn">বাংলা</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="tr">Türkçe</option>
+          <option value="te">తెలుగు</option>
+          <option value="ur">اردو</option>
+        </select>
       </nav>
     </header>
 
     <header class="hero" id="top">
       <div class="hero-copy">
         <p class="eyebrow">HOWLONG · PRIVACY</p>
-        <h1>隐私政策</h1>
-        <p class="hero-description">了解 HowLong 如何保存你的事项、安排提醒，以及处理 iCloud 备份。</p>
-        <p class="last-updated">最后更新：2026 年 9 月 26 日</p>
+        <h1 id="page-title">隐私政策</h1>
+        <p class="hero-description" id="page-summary">了解 HowLong 如何保存你的事项、安排提醒，以及处理 iCloud 备份。</p>
+        <p class="last-updated"><span id="page-updated">最后更新：2026 年 9 月 26 日</span></p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <svg class="hero-logo" viewBox="0 0 260 220">
@@ -309,8 +336,8 @@
       </div>
     </header>
 
-    <main class="policy-stack">
-      <section class="policy-card" id="zh" lang="zh-Hans" aria-labelledby="zh-title">
+    <main class="policy-stack" id="policy-content">
+      <section class="policy-card" id="zh" lang="zh-Hans" data-locale-section="zh-Hans" data-page-title="隐私政策" data-summary="了解 HowLong 如何保存你的事项、安排提醒，以及处理 iCloud 备份。" data-updated="最后更新：2026 年 9 月 26 日" aria-labelledby="zh-title">
         <header class="policy-header">
           <div>
             <p class="eyebrow">POLICY · 中文</p>
@@ -361,7 +388,7 @@
         </div>
       </section>
 
-      <section class="policy-card" id="en" lang="en" aria-labelledby="en-title">
+      <section class="policy-card" id="en" lang="en" data-locale-section="en-US en-GB" data-page-title="Privacy Policy" data-summary="Learn how HowLong stores your items, schedules reminders, and handles iCloud backups." data-updated="Last updated: 2026-09-26" aria-labelledby="en-title">
         <header class="policy-header">
           <div>
             <p class="eyebrow">POLICY · ENGLISH</p>
@@ -411,6 +438,623 @@
           <p>For questions about this policy or personal information, contact: <a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
         </div>
       </section>
+
+      <!-- Additional localized policy sections are added here. -->
+      <div id="additional-localizations">
+        <!-- GENERATED_POLICY_SECTIONS_START -->
+<section class="policy-card locale-section" id="privacy-zh-Hant" lang="zh-Hant" dir="ltr" data-locale-section="zh-Hant" data-page-title="隱私權政策" data-summary="了解 HowLong 如何儲存事項、安排提醒及處理 iCloud 備份。" data-updated="最後更新：2026 年 9 月 26 日" aria-labelledby="policy-title-zh-Hant">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · ZH-HANT</p>
+      <h2 class="policy-title" id="policy-title-zh-Hant">繁體中文</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>關於本政策</h3>
+    <p>本政策說明「還有：到期提醒」（HowLong）如何處理你在 App 中儲存的資訊。開發者：方榮福（Rongfu Fang）。</p>
+    <h3>App 會處理哪些資訊</h3>
+    <ul>
+      <li>你建立或儲存的事項，包括標題、日期、分類、備註、提醒規則、封存項目、每日必做事項、完成紀錄及相關附件。</li>
+      <li>你選取或拍攝的圖片與檔案。Apple Vision 會在你的裝置上辨識圖片文字；若使用 iCloud 備份，備份也可能包含這些附件。</li>
+      <li>儲存在裝置上的 App 偏好設定與 Premium 權益狀態，用於提供相應功能。</li>
+    </ul>
+    <h3>儲存與 iCloud 同步</h3>
+    <p>事項資料預設儲存在你的裝置上。App 沒有獨立帳號系統，也沒有用於儲存事項內容的開發者伺服器。</p>
+    <p>Premium 使用者可以手動上傳或還原 iCloud 備份，也可以開啟自動同步。上傳時，App 會將目前備份寫入與你的 Apple 帳號關聯的 CloudKit 私有資料庫，讓你在自己的裝置間還原。備份可能包含事項、分類、提醒規則、封存項目、每日必做事項、完成紀錄及相關圖片或檔案附件。此資料庫預設只有你可以存取，資料會計入你的 iCloud 儲存空間。Apple 對 iCloud 服務的處理受 <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a> 約束。</p>
+    <h3>通知、匯出與分享</h3>
+    <p>到期與每日提醒由 iOS 本機通知功能安排。App 不會透過開發者營運的推播伺服器傳送這些提醒。</p>
+    <p>當你匯出備份、分享事項或分享意見回饋範本時，內容會交給你在系統分享面板中選擇的目標。接收方如何處理內容，取決於接收方自己的政策。</p>
+    <h3>購買與第三方服務</h3>
+    <p>App 內購買由 Apple App Store 處理；開發者不會收到你的完整付款卡資料。iCloud 同步由 Apple CloudKit 提供。目前的 App 不使用廣告追蹤或第三方分析 SDK。</p>
+    <h3>刪除與保留</h3>
+    <p>封存的事項仍會保留在 App 中；你可以在封存中選擇「永久刪除」，從裝置移除事項及其附件。開啟自動同步後，之後成功上傳會以目前備份取代 iCloud 中的上一份備份。關閉自動同步不會自動刪除既有 iCloud 備份。你可以在 Apple 帳號的 iCloud 儲存空間管理中檢視並刪除本 App 的 iCloud 資料，也可以在系統設定中關閉本 App 的 iCloud 使用權限。選單名稱可能因系統版本而異，請參閱 Apple 說明：<a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud。Apple" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud。Apple</a> 負責其服務中的資料保留與刪除。</p>
+    <h3>政策更新</h3>
+    <p>如果 App 的資料處理方式有所變更，開發者會更新本頁內容及日期。</p>
+    <h3>隱私聯絡方式</h3>
+    <p>如果你對本政策或個人資料處理有疑問，請聯絡：</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">本頁為機器輔助翻譯，尚待母語人士審校。如發現內容不一致，請透過支援頁面聯絡我們。</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-de" lang="de" dir="ltr" data-locale-section="de" data-page-title="Datenschutzerklärung" data-summary="Erfahren Sie, wie HowLong Ihre Einträge speichert, Erinnerungen plant und iCloud-Backups behandelt." data-updated="Zuletzt aktualisiert: 26. September 2026" aria-labelledby="policy-title-de">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · DE</p>
+      <h2 class="policy-title" id="policy-title-de">Deutsch</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>Über diese Erklärung</h3>
+    <p>Diese Erklärung beschreibt, wie „还有：到期提醒“ (HowLong) mit Informationen umgeht, die Sie in der App speichern. Entwickler: Rongfu Fang (荣福 方).</p>
+    <h3>Welche Informationen die App verarbeitet</h3>
+    <ul>
+      <li>Von Ihnen erstellte oder gespeicherte Einträge, darunter Titel, Daten, Kategorien, Notizen, Erinnerungsregeln, Archiv, tägliche Aufgaben, Erledigungsprotokolle und zugehörige Anhänge.</li>
+      <li>Bilder und Dateien, die Sie auswählen oder aufnehmen. Apple Vision erkennt Bildtext auf Ihrem Gerät. Wenn Sie ein iCloud-Backup verwenden, können diese Anhänge ebenfalls darin enthalten sein.</li>
+      <li>Auf Ihrem Gerät gespeicherte App-Einstellungen und der Status Ihrer Premium-Berechtigung, damit die zugehörigen Funktionen bereitgestellt werden können.</li>
+    </ul>
+    <h3>Speicherung und iCloud-Synchronisierung</h3>
+    <p>Eintragsdaten werden standardmäßig auf Ihrem Gerät gespeichert. Die App hat kein separates Kontosystem und keinen vom Entwickler betriebenen Server zur Speicherung von Eintragsinhalten.</p>
+    <p>Premium-Nutzer können ein iCloud-Backup manuell hochladen oder wiederherstellen und die automatische Synchronisierung aktivieren. Beim Hochladen schreibt die App das aktuelle Backup in die mit Ihrem Apple Account verknüpfte private CloudKit-Datenbank, damit Sie es auf Ihren eigenen Geräten wiederherstellen können. Ein Backup kann Einträge, Kategorien, Erinnerungsregeln, Archiv, tägliche Aufgaben, Erledigungsprotokolle sowie zugehörige Bilder und Dateien enthalten. Standardmäßig können nur Sie auf diese Datenbank zugreifen; die Daten zählen zu Ihrem iCloud-Speicher. Für iCloud-Dienste gilt Apples Datenschutzerklärung: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>Mitteilungen, Export und Teilen</h3>
+    <p>Ablauf- und tägliche Erinnerungen werden mit lokalen iOS-Mitteilungen geplant. Die App sendet diese Erinnerungen nicht über einen vom Entwickler betriebenen Push-Server.</p>
+    <p>Wenn Sie ein Backup exportieren oder einen Eintrag beziehungsweise eine Rückmeldungsvorlage teilen, wird der Inhalt an das Ziel übergeben, das Sie im systemeigenen Teilen-Menü auswählen. Für den Umgang mit den Inhalten gelten die Richtlinien des Empfängers.</p>
+    <h3>Käufe und Dienste Dritter</h3>
+    <p>In-App-Käufe werden vom Apple App Store abgewickelt; der Entwickler erhält nicht Ihre vollständigen Zahlungskartendaten. Die iCloud-Synchronisierung wird von Apple CloudKit bereitgestellt. Die aktuelle App verwendet weder Werbetracking noch SDKs für Analysen von Drittanbietern.</p>
+    <h3>Löschen und Aufbewahrung</h3>
+    <p>Archivierte Einträge bleiben in der App. Sie können im Archiv „Dauerhaft löschen“ wählen, um einen Eintrag und seine Anhänge von Ihrem Gerät zu entfernen. Wenn die automatische Synchronisierung aktiviert ist, ersetzt ein späterer erfolgreicher Upload das vorherige iCloud-Backup durch das aktuelle. Das Ausschalten der automatischen Synchronisierung löscht kein vorhandenes iCloud-Backup. Sie können die iCloud-Daten der App in der iCloud-Speicherverwaltung Ihres Apple Accounts ansehen und löschen oder den iCloud-Zugriff der App in den Systemeinstellungen deaktivieren. Menünamen können je nach Systemversion abweichen. Anleitung von Apple: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple ist für die Aufbewahrung und Löschung von Daten in seinen Diensten verantwortlich.</p>
+    <h3>Änderungen dieser Erklärung</h3>
+    <p>Wenn sich die Datenverarbeitung der App ändert, aktualisiert der Entwickler diese Seite und das Änderungsdatum.</p>
+    <h3>Kontakt zum Datenschutz</h3>
+    <p>Bei Fragen zu dieser Erklärung oder zur Verarbeitung personenbezogener Daten kontaktieren Sie uns bitte:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Diese Übersetzung wurde maschinell erstellt und muss noch von Muttersprachlern geprüft werden. Wenn Ihnen eine Abweichung auffällt, kontaktieren Sie uns bitte über die Support-Seite.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-fr" lang="fr" dir="ltr" data-locale-section="fr" data-page-title="Politique de confidentialité" data-summary="Découvrez comment HowLong conserve vos éléments, programme les rappels et gère les sauvegardes iCloud." data-updated="Dernière mise à jour : 26 septembre 2026" aria-labelledby="policy-title-fr">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · FR</p>
+      <h2 class="policy-title" id="policy-title-fr">Français</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>À propos de cette politique</h3>
+    <p>Cette politique explique comment « 还有：到期提醒 » (HowLong) traite les informations que vous enregistrez dans l’app. Développeur : Rongfu Fang (荣福 方).</p>
+    <h3>Informations traitées par l’app</h3>
+    <ul>
+      <li>Les éléments que vous créez ou enregistrez : titres, dates, catégories, notes, règles de rappel, archives, tâches quotidiennes, historiques d’achèvement et pièces jointes associées.</li>
+      <li>Les images et fichiers que vous choisissez ou prenez. Apple Vision reconnaît le texte des images sur votre appareil. Si vous utilisez une sauvegarde iCloud, celle-ci peut également inclure ces pièces jointes.</li>
+      <li>Les préférences de l’app et l’état de vos droits Premium enregistrés sur votre appareil afin de fournir les fonctions correspondantes.</li>
+    </ul>
+    <h3>Stockage et synchronisation iCloud</h3>
+    <p>Par défaut, les données des éléments sont stockées sur votre appareil. L’app ne possède pas de système de compte séparé ni de serveur exploité par le développeur pour stocker le contenu des éléments.</p>
+    <p>Les utilisateurs Premium peuvent téléverser ou restaurer manuellement une sauvegarde iCloud et activer la synchronisation automatique. Lors du téléversement, l’app écrit la sauvegarde actuelle dans la base de données CloudKit privée associée à votre compte Apple afin que vous puissiez la restaurer sur vos propres appareils. Une sauvegarde peut contenir les éléments, catégories, règles de rappel, archives, tâches quotidiennes, historiques d’achèvement et pièces jointes image ou fichier. Par défaut, vous seul pouvez accéder à cette base de données et ses données comptent dans votre stockage iCloud. Le traitement des services iCloud est régi par la politique de confidentialité d’Apple : <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>Notifications, exportation et partage</h3>
+    <p>Les rappels d’échéance et quotidiens sont programmés au moyen des notifications locales d’iOS. L’app ne les envoie pas par l’intermédiaire d’un serveur de notifications push exploité par le développeur.</p>
+    <p>Lorsque vous exportez une sauvegarde ou partagez un élément ou un modèle de commentaire, le contenu est transmis à la destination choisie dans la feuille de partage du système. Le traitement par le destinataire relève de ses propres politiques.</p>
+    <h3>Achats et services tiers</h3>
+    <p>Les achats intégrés sont traités par l’Apple App Store ; le développeur ne reçoit pas les données complètes de votre carte de paiement. La synchronisation iCloud est fournie par Apple CloudKit. L’app actuelle n’utilise ni suivi publicitaire ni SDK d’analyse tiers.</p>
+    <h3>Suppression et conservation</h3>
+    <p>Les éléments archivés restent dans l’app. Vous pouvez choisir « Supprimer définitivement » dans les archives pour supprimer de votre appareil un élément et ses pièces jointes. Lorsque la synchronisation automatique est activée, un prochain téléversement réussi remplace l’ancienne sauvegarde iCloud par la sauvegarde actuelle. Désactiver la synchronisation automatique ne supprime pas une sauvegarde iCloud existante. Vous pouvez consulter et supprimer les données iCloud de l’app dans la gestion du stockage iCloud de votre compte Apple, ou désactiver l’accès iCloud de l’app dans les réglages système. Les noms des menus peuvent varier selon la version du système. Instructions d’Apple : <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple est responsable de la conservation et de la suppression des données dans ses services.</p>
+    <h3>Modifications de cette politique</h3>
+    <p>Si les pratiques de traitement des données de l’app changent, le développeur mettra à jour cette page et sa date de révision.</p>
+    <h3>Contact concernant la confidentialité</h3>
+    <p>Pour toute question sur cette politique ou le traitement des données personnelles, contactez-nous :</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Cette traduction a été réalisée avec l’aide d’un outil automatique et doit encore être vérifiée par des locuteurs natifs. En cas de différence, contactez-nous depuis la page d’assistance.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-es-ES" lang="es-ES" dir="ltr" data-locale-section="es-ES" data-page-title="Política de privacidad" data-summary="Descubre cómo HowLong guarda tus elementos, programa recordatorios y gestiona las copias de seguridad de iCloud." data-updated="Última actualización: 26 de septiembre de 2026" aria-labelledby="policy-title-es-ES">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · ES-ES</p>
+      <h2 class="policy-title" id="policy-title-es-ES">Español (España)</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>Acerca de esta política</h3>
+    <p>Esta política explica cómo « 还有：到期提醒 » (HowLong) trata la información que guardas en la app. Desarrollador: Rongfu Fang (荣福 方).</p>
+    <h3>Información que trata la app</h3>
+    <ul>
+      <li>Los elementos que creas o guardas, incluidos títulos, fechas, categorías, notas, reglas de recordatorio, archivo, tareas diarias, registros de finalización y archivos adjuntos relacionados.</li>
+      <li>Las imágenes y archivos que eliges o capturas. Apple Vision reconoce el texto de las imágenes en tu dispositivo. Si usas una copia de seguridad de iCloud, también puede incluir estos archivos adjuntos.</li>
+      <li>Las preferencias de la app y el estado de las prestaciones Premium guardados en tu dispositivo para ofrecer las funciones correspondientes.</li>
+    </ul>
+    <h3>Almacenamiento y sincronización de iCloud</h3>
+    <p>De forma predeterminada, los datos de los elementos se guardan en tu dispositivo. La app no tiene un sistema de cuentas independiente ni un servidor del desarrollador para almacenar el contenido de los elementos.</p>
+    <p>Los usuarios Premium pueden subir o restaurar manualmente una copia de iCloud y activar la sincronización automática. Al subirla, la app escribe la copia actual en la base de datos privada de CloudKit asociada a tu cuenta de Apple para que puedas restaurarla en tus propios dispositivos. La copia puede incluir elementos, categorías, reglas de recordatorio, archivo, tareas diarias, registros de finalización e imágenes o archivos adjuntos relacionados. De forma predeterminada, solo tú puedes acceder a esta base de datos y sus datos cuentan para el almacenamiento de iCloud. El tratamiento de los servicios de iCloud se rige por la Política de privacidad de Apple: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>Notificaciones, exportación y uso compartido</h3>
+    <p>Los recordatorios de vencimiento y diarios se programan mediante las notificaciones locales de iOS. La app no los envía a través de un servidor de notificaciones push gestionado por el desarrollador.</p>
+    <p>Cuando exportas una copia o compartes un elemento o una plantilla de comentarios, el contenido se entrega al destino que eliges en la hoja para compartir del sistema. El tratamiento que haga el destinatario se rige por sus propias políticas.</p>
+    <h3>Compras y servicios de terceros</h3>
+    <p>Las compras dentro de la app las procesa Apple App Store; el desarrollador no recibe los datos completos de tu tarjeta de pago. La sincronización de iCloud la proporciona Apple CloudKit. La app actual no usa seguimiento publicitario ni SDK de análisis de terceros.</p>
+    <h3>Eliminación y conservación</h3>
+    <p>Los elementos archivados permanecen en la app. Puedes elegir «Eliminar permanentemente» en el archivo para quitar de tu dispositivo un elemento y sus archivos adjuntos. Si la sincronización automática está activada, una próxima carga completada sustituirá la copia anterior de iCloud por la actual. Desactivar la sincronización automática no elimina una copia de iCloud existente. Puedes consultar y eliminar los datos de iCloud de esta app en la gestión del almacenamiento de iCloud de tu cuenta de Apple, o desactivar el acceso de la app a iCloud en los ajustes del sistema. Los nombres de los menús pueden variar según la versión del sistema. Instrucciones de Apple: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple es responsable de conservar y eliminar los datos de sus servicios.</p>
+    <h3>Cambios en esta política</h3>
+    <p>Si cambian las prácticas de tratamiento de datos de la app, el desarrollador actualizará esta página y la fecha de revisión.</p>
+    <h3>Contacto de privacidad</h3>
+    <p>Si tienes preguntas sobre esta política o el tratamiento de datos personales, ponte en contacto con nosotros:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Esta traducción se ha generado con ayuda automática y aún debe ser revisada por hablantes nativos. Si detectas alguna diferencia, contáctanos desde la página de asistencia.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-pt-BR" lang="pt-BR" dir="ltr" data-locale-section="pt-BR" data-page-title="Política de Privacidade" data-summary="Saiba como o HowLong armazena seus itens, agenda lembretes e trata backups do iCloud." data-updated="Última atualização: 26 de setembro de 2026" aria-labelledby="policy-title-pt-BR">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · PT-BR</p>
+      <h2 class="policy-title" id="policy-title-pt-BR">Português (Brasil)</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>Sobre esta política</h3>
+    <p>Esta política explica como “还有：到期提醒” (HowLong) trata as informações que você salva no app. Desenvolvedor: Rongfu Fang (荣福 方).</p>
+    <h3>Informações tratadas pelo app</h3>
+    <ul>
+      <li>Os itens que você cria ou salva, incluindo títulos, datas, categorias, notas, regras de lembrete, arquivo, tarefas diárias, registros de conclusão e anexos relacionados.</li>
+      <li>Imagens e arquivos que você escolhe ou captura. O Apple Vision reconhece o texto das imagens no seu dispositivo. Se você usar um backup do iCloud, ele também poderá incluir esses anexos.</li>
+      <li>Preferências do app e o status dos direitos Premium armazenados no dispositivo para fornecer os recursos correspondentes.</li>
+    </ul>
+    <h3>Armazenamento e sincronização do iCloud</h3>
+    <p>Por padrão, os dados dos itens ficam armazenados no seu dispositivo. O app não tem um sistema de contas separado nem um servidor do desenvolvedor para armazenar o conteúdo dos itens.</p>
+    <p>Usuários Premium podem enviar ou restaurar manualmente um backup do iCloud e ativar a sincronização automática. No envio, o app grava o backup atual no banco de dados privado do CloudKit associado à sua Conta Apple para que você possa restaurá-lo nos seus próprios dispositivos. O backup pode incluir itens, categorias, regras de lembrete, arquivo, tarefas diárias, registros de conclusão e anexos de imagem ou arquivo relacionados. Por padrão, somente você pode acessar esse banco de dados, e os dados contam no seu armazenamento do iCloud. O tratamento dos serviços do iCloud segue a Política de Privacidade da Apple: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>Notificações, exportação e compartilhamento</h3>
+    <p>Lembretes de vencimento e diários são agendados usando as notificações locais do iOS. O app não envia esses lembretes por um servidor de notificações push operado pelo desenvolvedor.</p>
+    <p>Quando você exporta um backup ou compartilha um item ou modelo de feedback, o conteúdo é enviado ao destino escolhido na folha de compartilhamento do sistema. O tratamento feito pelo destinatário segue as políticas dele.</p>
+    <h3>Compras e serviços de terceiros</h3>
+    <p>As compras dentro do app são processadas pela Apple App Store; o desenvolvedor não recebe os dados completos do seu cartão de pagamento. A sincronização do iCloud é fornecida pelo Apple CloudKit. O app atual não usa rastreamento de anúncios nem SDKs de análise de terceiros.</p>
+    <h3>Exclusão e retenção</h3>
+    <p>Itens arquivados permanecem no app. Você pode escolher “Apagar permanentemente” no arquivo para remover um item e seus anexos do dispositivo. Com a sincronização automática ativada, um próximo envio concluído substitui o backup anterior do iCloud pelo atual. Desativar a sincronização automática não apaga um backup existente do iCloud. Você pode consultar e apagar os dados do iCloud deste app no gerenciamento de armazenamento do iCloud da sua Conta Apple ou desativar o acesso do app ao iCloud nos ajustes do sistema. Os nomes dos menus podem variar conforme a versão do sistema. Instruções da Apple: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. A Apple é responsável pela retenção e exclusão de dados nos serviços dela.</p>
+    <h3>Alterações nesta política</h3>
+    <p>Se as práticas de tratamento de dados do app mudarem, o desenvolvedor atualizará esta página e a data da revisão.</p>
+    <h3>Contato sobre privacidade</h3>
+    <p>Se tiver dúvidas sobre esta política ou sobre o tratamento de dados pessoais, entre em contato:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Esta tradução foi gerada com auxílio automático e ainda precisa de revisão por falantes nativos. Se encontrar alguma divergência, entre em contato pela página de suporte.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-ru" lang="ru" dir="ltr" data-locale-section="ru" data-page-title="Политика конфиденциальности" data-summary="Узнайте, как HowLong хранит записи, планирует напоминания и обрабатывает резервные копии iCloud." data-updated="Последнее обновление: 26 сентября 2026 г." aria-labelledby="policy-title-ru">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · RU</p>
+      <h2 class="policy-title" id="policy-title-ru">Русский</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>О политике</h3>
+    <p>В этой политике описано, как приложение «还有：到期提醒» (HowLong) обрабатывает сведения, которые вы в нём сохраняете. Разработчик: Rongfu Fang (荣福 方).</p>
+    <h3>Какие сведения обрабатывает приложение</h3>
+    <ul>
+      <li>Созданные или сохранённые вами записи: названия, даты, категории, заметки, правила напоминаний, архив, ежедневные задачи, записи о выполнении и связанные вложения.</li>
+      <li>Выбранные или снятые вами изображения и файлы. Apple Vision распознаёт текст на изображениях на вашем устройстве. Если вы используете резервную копию iCloud, в неё также могут входить эти вложения.</li>
+      <li>Настройки приложения и состояние прав Premium, сохранённые на устройстве для работы соответствующих функций.</li>
+    </ul>
+    <h3>Хранение и синхронизация с iCloud</h3>
+    <p>По умолчанию данные записей хранятся на вашем устройстве. В приложении нет отдельной системы учётных записей и сервера разработчика для хранения содержимого записей.</p>
+    <p>Пользователи Premium могут вручную загрузить или восстановить резервную копию iCloud и включить автоматическую синхронизацию. При загрузке приложение записывает текущую копию в частную базу CloudKit, связанную с вашей учётной записью Apple, чтобы вы могли восстановить её на своих устройствах. Копия может содержать записи, категории, правила напоминаний, архив, ежедневные задачи, записи о выполнении и связанные изображения или файлы. По умолчанию доступ к этой базе есть только у вас; её данные учитываются в хранилище iCloud. Обработка сервисов iCloud регулируется Политикой конфиденциальности Apple: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>Уведомления, экспорт и отправка</h3>
+    <p>Напоминания о сроках и ежедневные напоминания планируются с помощью локальных уведомлений iOS. Приложение не отправляет их через сервер push-уведомлений, управляемый разработчиком.</p>
+    <p>При экспорте копии или отправке записи либо шаблона отзыва содержимое передаётся выбранному вами получателю через системное меню «Поделиться». Обработка этих данных получателем регулируется его собственными правилами.</p>
+    <h3>Покупки и сторонние сервисы</h3>
+    <p>Покупки в приложении обрабатывает Apple App Store; разработчик не получает полные данные вашей платёжной карты. Синхронизацию iCloud обеспечивает Apple CloudKit. Текущая версия приложения не использует рекламное отслеживание и сторонние SDK аналитики.</p>
+    <h3>Удаление и хранение данных</h3>
+    <p>Архивированные записи остаются в приложении. В архиве можно выбрать «Удалить навсегда», чтобы удалить запись и вложения с устройства. При включённой автоматической синхронизации следующая успешная загрузка заменяет предыдущую копию iCloud текущей. Отключение автоматической синхронизации не удаляет существующую копию iCloud. Данные приложения в iCloud можно просмотреть и удалить в управлении хранилищем iCloud вашей учётной записи Apple; также можно отключить приложению доступ к iCloud в системных настройках. Названия меню зависят от версии системы. Инструкция Apple: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple отвечает за хранение и удаление данных в своих сервисах.</p>
+    <h3>Изменения политики</h3>
+    <p>Если способы обработки данных приложением изменятся, разработчик обновит эту страницу и дату редакции.</p>
+    <h3>Контакт по вопросам конфиденциальности</h3>
+    <p>Если у вас есть вопросы об этой политике или обработке персональных данных, напишите нам:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Этот перевод подготовлен автоматически и еще требует проверки носителями языка. Если вы заметили расхождение, свяжитесь с нами через страницу поддержки.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-ar" lang="ar" dir="rtl" data-locale-section="ar" data-page-title="سياسة الخصوصية" data-summary="تعرّف على كيفية حفظ HowLong للعناصر وجدولة التذكيرات والتعامل مع نسخ iCloud الاحتياطية." data-updated="آخر تحديث: 26 سبتمبر 2026" aria-labelledby="policy-title-ar">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · AR</p>
+      <h2 class="policy-title" id="policy-title-ar">العربية</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>نبذة عن هذه السياسة</h3>
+    <p>توضح هذه السياسة كيفية تعامل تطبيق «还有：到期提醒» (HowLong) مع المعلومات التي تحفظها فيه. المطوّر: Rongfu Fang (荣福 方).</p>
+    <h3>المعلومات التي يعالجها التطبيق</h3>
+    <ul>
+      <li>العناصر التي تنشئها أو تحفظها، بما في ذلك العناوين والتواريخ والفئات والملاحظات وقواعد التذكير والأرشيف والمهام اليومية وسجلات الإكمال والمرفقات المرتبطة بها.</li>
+      <li>الصور والملفات التي تختارها أو تلتقطها. يتعرّف Apple Vision على نص الصور على جهازك. وإذا استخدمت نسخة iCloud احتياطية، فقد تتضمن هذه المرفقات أيضاً.</li>
+      <li>تفضيلات التطبيق وحالة مزايا Premium المحفوظة على جهازك لتوفير الوظائف المرتبطة بها.</li>
+    </ul>
+    <h3>التخزين ومزامنة iCloud</h3>
+    <p>تُحفظ بيانات العناصر على جهازك افتراضياً. لا يملك التطبيق نظام حسابات منفصلاً أو خادماً يديره المطوّر لتخزين محتوى العناصر.</p>
+    <p>يمكن لمستخدمي Premium رفع نسخة iCloud احتياطية أو استعادتها يدوياً، كما يمكنهم تشغيل المزامنة التلقائية. عند الرفع، يكتب التطبيق النسخة الحالية في قاعدة بيانات CloudKit الخاصة المرتبطة بحساب Apple الخاص بك، لتتمكن من استعادتها على أجهزتك. قد تتضمن النسخة العناصر والفئات وقواعد التذكير والأرشيف والمهام اليومية وسجلات الإكمال والصور أو الملفات المرفقة. لا يمكن افتراضياً الوصول إلى قاعدة البيانات إلا من قبلك، وتُحتسب بياناتها ضمن مساحة iCloud. تخضع معالجة خدمات iCloud لسياسة خصوصية Apple: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>الإشعارات والتصدير والمشاركة</h3>
+    <p>تُجدول تذكيرات المواعيد والتذكيرات اليومية باستخدام الإشعارات المحلية في iOS. لا يرسل التطبيق هذه التذكيرات عبر خادم إشعارات فورية يديره المطوّر.</p>
+    <p>عند تصدير نسخة احتياطية أو مشاركة عنصر أو نموذج ملاحظات، يُسلَّم المحتوى إلى الوجهة التي تختارها في ورقة المشاركة الخاصة بالنظام. وتخضع طريقة تعامل المستلِم مع المحتوى لسياساته الخاصة.</p>
+    <h3>المشتريات وخدمات الجهات الأخرى</h3>
+    <p>تُعالج مشتريات التطبيق عبر Apple App Store؛ ولا يتلقى المطوّر بيانات بطاقة الدفع كاملة. وتوفر Apple CloudKit مزامنة iCloud. لا يستخدم التطبيق الحالي تتبّع الإعلانات أو حزم SDK للتحليلات من جهات خارجية.</p>
+    <h3>الحذف والاحتفاظ</h3>
+    <p>تبقى العناصر المؤرشفة في التطبيق. يمكنك اختيار «حذف نهائياً» من الأرشيف لإزالة العنصر ومرفقاته من جهازك. عند تشغيل المزامنة التلقائية، يستبدل الرفع الناجح اللاحق نسخة iCloud السابقة بالنسخة الحالية. إيقاف المزامنة التلقائية لا يحذف نسخة iCloud الموجودة. يمكنك مراجعة بيانات هذا التطبيق في iCloud وحذفها من إدارة مساحة iCloud في حساب Apple، أو إيقاف وصول التطبيق إلى iCloud من إعدادات النظام. قد تختلف أسماء القوائم حسب إصدار النظام. تعليمات Apple: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. تتحمل Apple مسؤولية الاحتفاظ بالبيانات في خدماتها وحذفها.</p>
+    <h3>تحديثات هذه السياسة</h3>
+    <p>إذا تغيّرت ممارسات التطبيق في معالجة البيانات، فسيحدّث المطوّر هذه الصفحة وتاريخ مراجعتها.</p>
+    <h3>التواصل بشأن الخصوصية</h3>
+    <p>للاستفسارات حول هذه السياسة أو معالجة المعلومات الشخصية، يُرجى التواصل معنا:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">أُعدّت هذه الترجمة بمساعدة آلية وما زالت بحاجة إلى مراجعة متحدثين أصليين. إذا لاحظت اختلافًا، فتواصل معنا عبر صفحة الدعم.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-hi" lang="hi" dir="ltr" data-locale-section="hi" data-page-title="गोपनीयता नीति" data-summary="जानें कि HowLong आपके आइटम कैसे सहेजता है, रिमाइंडर कैसे तय करता है और iCloud बैकअप को कैसे संभालता है।" data-updated="अंतिम अपडेट: 26 सितंबर 2026" aria-labelledby="policy-title-hi">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · HI</p>
+      <h2 class="policy-title" id="policy-title-hi">हिन्दी</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>इस नीति के बारे में</h3>
+    <p>यह नीति बताती है कि “还有：到期提醒” (HowLong) ऐप में आपके द्वारा सहेजी गई जानकारी को कैसे संभालता है। डेवलपर: Rongfu Fang (荣福 方)।</p>
+    <h3>ऐप कौन-सी जानकारी संभालता है</h3>
+    <ul>
+      <li>आपके बनाए या सहेजे गए आइटम, जैसे शीर्षक, तारीखें, श्रेणियाँ, नोट्स, रिमाइंडर नियम, संग्रह, दैनिक कार्य, पूरा होने के रिकॉर्ड और संबंधित अटैचमेंट।</li>
+      <li>आपकी चुनी या ली गई तस्वीरें और फ़ाइलें। Apple Vision आपके डिवाइस पर तस्वीरों के पाठ को पहचानता है। यदि आप iCloud बैकअप का उपयोग करते हैं, तो उसमें ये अटैचमेंट भी हो सकते हैं।</li>
+      <li>ऐप की प्राथमिकताएँ और Premium सुविधा की स्थिति, जो संबंधित सुविधाएँ देने के लिए आपके डिवाइस पर सहेजी जाती हैं।</li>
+    </ul>
+    <h3>संग्रहण और iCloud सिंक</h3>
+    <p>डिफ़ॉल्ट रूप से आइटम का डेटा आपके डिवाइस पर रहता है। ऐप में अलग खाता प्रणाली या आइटम सामग्री रखने के लिए डेवलपर का सर्वर नहीं है।</p>
+    <p>Premium उपयोगकर्ता iCloud बैकअप को मैन्युअल रूप से अपलोड या पुनर्स्थापित कर सकते हैं और ऑटो सिंक चालू कर सकते हैं। अपलोड होने पर ऐप मौजूदा बैकअप को आपके Apple खाते से जुड़ी निजी CloudKit डेटाबेस में लिखता है, ताकि आप इसे अपने डिवाइसों पर पुनर्स्थापित कर सकें। बैकअप में आइटम, श्रेणियाँ, रिमाइंडर नियम, संग्रह, दैनिक कार्य, पूरा होने के रिकॉर्ड और संबंधित तस्वीरें या फ़ाइलें हो सकती हैं। डिफ़ॉल्ट रूप से इस डेटाबेस तक केवल आप पहुँच सकते हैं और इसका डेटा आपके iCloud स्टोरेज में गिना जाता है। iCloud सेवाओं का डेटा-प्रबंधन Apple की गोपनीयता नीति के अधीन है: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>सूचनाएँ, निर्यात और साझा करना</h3>
+    <p>समाप्ति-तिथि और दैनिक रिमाइंडर iOS की स्थानीय सूचनाओं से तय किए जाते हैं। ऐप इन रिमाइंडरों को डेवलपर द्वारा चलाए गए पुश सर्वर से नहीं भेजता।</p>
+    <p>जब आप बैकअप निर्यात करते हैं या कोई आइटम अथवा फ़ीडबैक टेम्पलेट साझा करते हैं, तो सामग्री सिस्टम शेयर शीट में आपके चुने हुए गंतव्य को दी जाती है। प्राप्तकर्ता सामग्री को कैसे संभालता है, यह उसकी अपनी नीतियों पर निर्भर करता है।</p>
+    <h3>खरीद और तृतीय-पक्ष सेवाएँ</h3>
+    <p>ऐप के भीतर की खरीद Apple App Store द्वारा संसाधित की जाती है; डेवलपर को आपके भुगतान कार्ड का पूरा विवरण नहीं मिलता। iCloud सिंक Apple CloudKit देता है। वर्तमान ऐप विज्ञापन ट्रैकिंग या तृतीय-पक्ष एनालिटिक्स SDK का उपयोग नहीं करता।</p>
+    <h3>मिटाना और डेटा रखना</h3>
+    <p>संग्रहित आइटम ऐप में बने रहते हैं। आप संग्रह में “हमेशा के लिए मिटाएँ” चुनकर आइटम और उसके अटैचमेंट को डिवाइस से हटा सकते हैं। ऑटो सिंक चालू होने पर अगला सफल अपलोड iCloud के पुराने बैकअप को मौजूदा बैकअप से बदल देता है। ऑटो सिंक बंद करने से मौजूदा iCloud बैकअप नहीं मिटता। आप अपने Apple खाते की iCloud स्टोरेज सेटिंग में इस ऐप का iCloud डेटा देख और मिटा सकते हैं, या सिस्टम सेटिंग में ऐप की iCloud पहुँच बंद कर सकते हैं। मेनू के नाम सिस्टम संस्करण के अनुसार बदल सकते हैं। Apple के निर्देश: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple अपनी सेवाओं में डेटा रखने और मिटाने के लिए जिम्मेदार है।</p>
+    <h3>इस नीति में बदलाव</h3>
+    <p>यदि ऐप के डेटा-प्रबंधन के तरीके बदलते हैं, तो डेवलपर इस पेज और संशोधन की तारीख को अपडेट करेगा।</p>
+    <h3>गोपनीयता संपर्क</h3>
+    <p>इस नीति या व्यक्तिगत जानकारी के प्रबंधन के बारे में प्रश्नों के लिए हमसे संपर्क करें:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">यह अनुवाद मशीन की सहायता से तैयार किया गया है और इसकी समीक्षा अभी मूल भाषा के वक्ताओं से होनी है। कोई अंतर दिखे तो सहायता पृष्ठ से हमसे संपर्क करें।</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-mr" lang="mr" dir="ltr" data-locale-section="mr" data-page-title="गोपनीयता धोरण" data-summary="HowLong तुमच्या नोंदी कशा साठवते, स्मरणपत्रे कशी ठरवते आणि iCloud बॅकअप कसा हाताळते ते जाणून घ्या." data-updated="शेवटचे अद्यतन: २६ सप्टेंबर २०२६" aria-labelledby="policy-title-mr">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · MR</p>
+      <h2 class="policy-title" id="policy-title-mr">मराठी</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>या धोरणाबद्दल</h3>
+    <p>“还有：到期提醒” (HowLong) अॅपमध्ये तुम्ही जतन केलेली माहिती कशी हाताळते, हे या धोरणात स्पष्ट केले आहे. विकासक: Rongfu Fang (荣福 方).</p>
+    <h3>अॅप कोणती माहिती हाताळते</h3>
+    <ul>
+      <li>तुम्ही तयार केलेल्या किंवा जतन केलेल्या नोंदी: शीर्षके, तारखा, श्रेणी, टिपा, स्मरणपत्रांचे नियम, संग्रहित नोंदी, दैनंदिन कामे, पूर्णत्वाच्या नोंदी आणि संबंधित संलग्नक.</li>
+      <li>तुम्ही निवडलेल्या किंवा काढलेल्या प्रतिमा व फाइल्स. Apple Vision तुमच्या डिव्हाइसवर प्रतिमेतील मजकूर ओळखते. तुम्ही iCloud बॅकअप वापरल्यास त्यात हे संलग्नकही असू शकतात.</li>
+      <li>संबंधित सुविधा देण्यासाठी डिव्हाइसवर साठवलेल्या अॅपच्या पसंती आणि Premium सुविधेची स्थिती.</li>
+    </ul>
+    <h3>साठवण आणि iCloud सिंक</h3>
+    <p>नोंदींचा डेटा डीफॉल्टने तुमच्या डिव्हाइसवर साठवला जातो. नोंदींची सामग्री साठवण्यासाठी अॅपमध्ये स्वतंत्र खाते प्रणाली किंवा विकासकाचा सर्व्हर नाही.</p>
+    <p>Premium वापरकर्ते iCloud बॅकअप हाताने अपलोड किंवा पुनर्संचयित करू शकतात आणि ऑटो सिंक सुरू करू शकतात. अपलोड करताना अॅप सध्याचा बॅकअप तुमच्या Apple खात्याशी जोडलेल्या खाजगी CloudKit डेटाबेसमध्ये लिहिते, जेणेकरून तुम्ही तो तुमच्या स्वतःच्या डिव्हाइसवर पुनर्संचयित करू शकता. बॅकअपमध्ये नोंदी, श्रेणी, स्मरणपत्रांचे नियम, संग्रह, दैनंदिन कामे, पूर्णत्वाच्या नोंदी आणि संबंधित प्रतिमा किंवा फाइल्स असू शकतात. डीफॉल्टने हा डेटाबेस फक्त तुम्हालाच उपलब्ध असतो आणि त्यातील डेटा iCloud स्टोरेजमध्ये मोजला जातो. iCloud सेवांवरील Apple चे गोपनीयता धोरण: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>सूचना, निर्यात आणि शेअरिंग</h3>
+    <p>मुदत आणि दैनंदिन स्मरणपत्रे iOS च्या स्थानिक सूचनांद्वारे ठरवली जातात. अॅप ही स्मरणपत्रे विकासकाने चालवलेल्या पुश सर्व्हरद्वारे पाठवत नाही.</p>
+    <p>तुम्ही बॅकअप निर्यात करता किंवा नोंद अथवा अभिप्राय नमुना शेअर करता तेव्हा सामग्री सिस्टमच्या शेअर शीटमध्ये तुम्ही निवडलेल्या ठिकाणी दिली जाते. प्राप्तकर्ता ती कशी हाताळतो हे त्याच्या धोरणांवर अवलंबून असते.</p>
+    <h3>खरेदी आणि तृतीय-पक्ष सेवा</h3>
+    <p>अॅपमधील खरेदी Apple App Store द्वारे प्रक्रिया केली जाते; विकासकाला तुमच्या पेमेंट कार्डची संपूर्ण माहिती मिळत नाही. iCloud सिंक Apple CloudKit द्वारे दिले जाते. सध्याचे अॅप जाहिरात ट्रॅकिंग किंवा तृतीय-पक्ष विश्लेषण SDK वापरत नाही.</p>
+    <h3>हटवणे आणि डेटा ठेवणे</h3>
+    <p>संग्रहित नोंदी अॅपमध्ये राहतात. संग्रहातून “कायमचे हटवा” निवडल्यास नोंद आणि तिचे संलग्नक डिव्हाइसवरून काढले जातात. ऑटो सिंक सुरू असल्यास पुढील यशस्वी अपलोड iCloud मधील जुना बॅकअप सध्याच्या बॅकअपने बदलतो. ऑटो सिंक बंद केल्याने आधीचा iCloud बॅकअप हटत नाही. Apple खात्याच्या iCloud स्टोरेज व्यवस्थापनातून या अॅपचा iCloud डेटा पाहून हटवता येतो किंवा सिस्टम सेटिंग्जमध्ये अॅपचा iCloud प्रवेश बंद करता येतो. सिस्टम आवृत्तीनुसार मेनूची नावे बदलू शकतात. Apple सूचना: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple आपल्या सेवांमधील डेटा ठेवणे व हटवणे यासाठी जबाबदार आहे.</p>
+    <h3>धोरणातील बदल</h3>
+    <p>अॅपची डेटा हाताळण्याची पद्धत बदलल्यास विकासक हे पृष्ठ आणि त्याची अद्ययावत तारीख बदलेल.</p>
+    <h3>गोपनीयता संपर्क</h3>
+    <p>या धोरणाबद्दल किंवा वैयक्तिक माहितीच्या हाताळणीबद्दल प्रश्न असल्यास संपर्क साधा:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">हे भाषांतर मशीनच्या मदतीने तयार केले आहे आणि मूळ भाषिकांकडून त्याचे पुनरावलोकन होणे बाकी आहे. काही फरक आढळल्यास सहाय्य पृष्ठावरून आमच्याशी संपर्क साधा.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-bn" lang="bn" dir="ltr" data-locale-section="bn" data-page-title="গোপনীয়তা নীতি" data-summary="HowLong কীভাবে আপনার আইটেম সংরক্ষণ করে, রিমাইন্ডার নির্ধারণ করে এবং iCloud ব্যাকআপ পরিচালনা করে তা জানুন।" data-updated="সর্বশেষ আপডেট: ২৬ সেপ্টেম্বর ২০২৬" aria-labelledby="policy-title-bn">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · BN</p>
+      <h2 class="policy-title" id="policy-title-bn">বাংলা</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>এই নীতি সম্পর্কে</h3>
+    <p>“还有：到期提醒” (HowLong) অ্যাপে আপনার সংরক্ষিত তথ্য কীভাবে পরিচালনা করে, এই নীতিতে তা ব্যাখ্যা করা হয়েছে। ডেভেলপার: Rongfu Fang (荣福 方)।</p>
+    <h3>অ্যাপ যে তথ্য পরিচালনা করে</h3>
+    <ul>
+      <li>আপনার তৈরি বা সংরক্ষিত আইটেম—শিরোনাম, তারিখ, বিভাগ, নোট, রিমাইন্ডারের নিয়ম, আর্কাইভ, দৈনিক কাজ, সম্পন্ন হওয়ার রেকর্ড এবং সংশ্লিষ্ট সংযুক্তি।</li>
+      <li>আপনার বেছে নেওয়া বা তোলা ছবি ও ফাইল। Apple Vision আপনার ডিভাইসেই ছবির লেখা শনাক্ত করে। আপনি iCloud ব্যাকআপ ব্যবহার করলে তাতে এই সংযুক্তিগুলিও থাকতে পারে।</li>
+      <li>সংশ্লিষ্ট ফিচার দেওয়ার জন্য ডিভাইসে সংরক্ষিত অ্যাপের পছন্দ এবং Premium সুবিধার অবস্থা।</li>
+    </ul>
+    <h3>সংরক্ষণ ও iCloud সিঙ্ক</h3>
+    <p>আইটেমের তথ্য ডিফল্টভাবে আপনার ডিভাইসে থাকে। আইটেমের বিষয়বস্তু সংরক্ষণের জন্য অ্যাপের আলাদা অ্যাকাউন্ট ব্যবস্থা বা ডেভেলপার-চালিত সার্ভার নেই।</p>
+    <p>Premium ব্যবহারকারীরা হাতে iCloud ব্যাকআপ আপলোড বা পুনরুদ্ধার করতে পারেন এবং স্বয়ংক্রিয় সিঙ্ক চালু করতে পারেন। আপলোডের সময় অ্যাপ বর্তমান ব্যাকআপটি আপনার Apple Account-এর সঙ্গে যুক্ত ব্যক্তিগত CloudKit ডেটাবেসে লেখে, যাতে আপনি নিজের ডিভাইসগুলোতে এটি পুনরুদ্ধার করতে পারেন। ব্যাকআপে আইটেম, বিভাগ, রিমাইন্ডারের নিয়ম, আর্কাইভ, দৈনিক কাজ, সম্পন্ন হওয়ার রেকর্ড এবং সংশ্লিষ্ট ছবি বা ফাইল থাকতে পারে। ডিফল্টভাবে এই ডেটাবেসে শুধু আপনিই প্রবেশ করতে পারেন; এর তথ্য আপনার iCloud স্টোরেজে গণনা হয়। iCloud পরিষেবায় Apple-এর তথ্য ব্যবস্থাপনা তাদের গোপনীয়তা নীতির অধীন: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>বিজ্ঞপ্তি, রপ্তানি ও শেয়ার</h3>
+    <p>মেয়াদ ও দৈনিক রিমাইন্ডার iOS-এর স্থানীয় বিজ্ঞপ্তি দিয়ে নির্ধারিত হয়। অ্যাপ ডেভেলপার-চালিত পুশ সার্ভারের মাধ্যমে এসব রিমাইন্ডার পাঠায় না।</p>
+    <p>আপনি ব্যাকআপ রপ্তানি বা আইটেম কিংবা মতামতের টেমপ্লেট শেয়ার করলে, সিস্টেমের শেয়ার শিটে নির্বাচিত গন্তব্যে বিষয়বস্তু দেওয়া হয়। প্রাপক কীভাবে তা পরিচালনা করবে, তা তাদের নিজস্ব নীতির ওপর নির্ভর করে।</p>
+    <h3>কেনাকাটা ও তৃতীয় পক্ষের পরিষেবা</h3>
+    <p>অ্যাপের ভেতরের কেনাকাটা Apple App Store পরিচালনা করে; ডেভেলপার আপনার পেমেন্ট কার্ডের সম্পূর্ণ তথ্য পায় না। iCloud সিঙ্ক Apple CloudKit দেয়। বর্তমান অ্যাপ বিজ্ঞাপন ট্র্যাকিং বা তৃতীয় পক্ষের অ্যানালিটিক্স SDK ব্যবহার করে না।</p>
+    <h3>মুছে ফেলা ও সংরক্ষণ</h3>
+    <p>আর্কাইভ করা আইটেম অ্যাপে থাকে। আর্কাইভে “স্থায়ীভাবে মুছুন” বেছে নিলে আইটেম ও সংযুক্তি ডিভাইস থেকে সরানো হয়। স্বয়ংক্রিয় সিঙ্ক চালু থাকলে পরবর্তী সফল আপলোড iCloud-এর আগের ব্যাকআপের বদলে বর্তমান ব্যাকআপ রাখে। স্বয়ংক্রিয় সিঙ্ক বন্ধ করলে আগে থাকা iCloud ব্যাকআপ মুছে যায় না। Apple Account-এর iCloud স্টোরেজ ব্যবস্থাপনায় এই অ্যাপের iCloud তথ্য দেখা ও মুছে ফেলা যায়, অথবা সিস্টেম সেটিংসে অ্যাপের iCloud প্রবেশাধিকার বন্ধ করা যায়। সিস্টেম সংস্করণভেদে মেনুর নাম আলাদা হতে পারে। Apple-এর নির্দেশনা: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple তাদের পরিষেবায় তথ্য সংরক্ষণ ও মুছে ফেলার জন্য দায়ী।</p>
+    <h3>এই নীতির পরিবর্তন</h3>
+    <p>অ্যাপের তথ্য ব্যবস্থাপনার পদ্ধতি বদলালে ডেভেলপার এই পৃষ্ঠা ও সংশোধনের তারিখ আপডেট করবে।</p>
+    <h3>গোপনীয়তা যোগাযোগ</h3>
+    <p>এই নীতি বা ব্যক্তিগত তথ্য পরিচালনা নিয়ে প্রশ্ন থাকলে যোগাযোগ করুন:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">এই অনুবাদটি যন্ত্রের সহায়তায় তৈরি করা হয়েছে এবং স্থানীয় ভাষাভাষীদের পর্যালোচনা এখনও বাকি। কোনো অমিল দেখলে সহায়তা পৃষ্ঠা থেকে যোগাযোগ করুন।</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-id" lang="id" dir="ltr" data-locale-section="id" data-page-title="Kebijakan Privasi" data-summary="Pelajari cara HowLong menyimpan item, menjadwalkan pengingat, dan menangani cadangan iCloud." data-updated="Terakhir diperbarui: 26 September 2026" aria-labelledby="policy-title-id">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · ID</p>
+      <h2 class="policy-title" id="policy-title-id">Bahasa Indonesia</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>Tentang kebijakan ini</h3>
+    <p>Kebijakan ini menjelaskan cara “还有：到期提醒” (HowLong) menangani informasi yang Anda simpan di app. Pengembang: Rongfu Fang (荣福 方).</p>
+    <h3>Informasi yang ditangani app</h3>
+    <ul>
+      <li>Item yang Anda buat atau simpan, termasuk judul, tanggal, kategori, catatan, aturan pengingat, arsip, tugas harian, catatan penyelesaian, dan lampiran terkait.</li>
+      <li>Gambar dan file yang Anda pilih atau ambil. Apple Vision mengenali teks gambar di perangkat Anda. Jika Anda menggunakan cadangan iCloud, lampiran ini mungkin ikut disertakan.</li>
+      <li>Preferensi app dan status hak Premium yang disimpan di perangkat untuk menyediakan fitur terkait.</li>
+    </ul>
+    <h3>Penyimpanan dan sinkronisasi iCloud</h3>
+    <p>Secara default, data item disimpan di perangkat Anda. App tidak memiliki sistem akun terpisah atau server yang dioperasikan pengembang untuk menyimpan isi item.</p>
+    <p>Pengguna Premium dapat mengunggah atau memulihkan cadangan iCloud secara manual, serta mengaktifkan sinkronisasi otomatis. Saat diunggah, app menulis cadangan saat ini ke database CloudKit pribadi yang terkait dengan Akun Apple Anda agar dapat dipulihkan di perangkat Anda sendiri. Cadangan dapat mencakup item, kategori, aturan pengingat, arsip, tugas harian, catatan penyelesaian, serta gambar atau file lampiran terkait. Secara default, hanya Anda yang dapat mengakses database ini dan datanya dihitung dalam penyimpanan iCloud Anda. Penanganan layanan iCloud diatur oleh Kebijakan Privasi Apple: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>Notifikasi, ekspor, dan berbagi</h3>
+    <p>Pengingat tanggal kedaluwarsa dan harian dijadwalkan menggunakan notifikasi lokal iOS. App tidak mengirim pengingat ini melalui server push yang dioperasikan pengembang.</p>
+    <p>Saat Anda mengekspor cadangan atau membagikan item maupun templat umpan balik, konten diberikan kepada tujuan yang Anda pilih di lembar berbagi sistem. Cara penerima menangani konten mengikuti kebijakan mereka sendiri.</p>
+    <h3>Pembelian dan layanan pihak ketiga</h3>
+    <p>Pembelian dalam app diproses oleh Apple App Store; pengembang tidak menerima detail lengkap kartu pembayaran Anda. Sinkronisasi iCloud disediakan oleh Apple CloudKit. App saat ini tidak menggunakan pelacakan iklan atau SDK analitik pihak ketiga.</p>
+    <h3>Penghapusan dan retensi</h3>
+    <p>Item yang diarsipkan tetap berada di app. Anda dapat memilih “Hapus Permanen” di arsip untuk menghapus item dan lampirannya dari perangkat. Jika sinkronisasi otomatis aktif, unggahan berikutnya yang berhasil akan mengganti cadangan iCloud sebelumnya dengan yang terbaru. Menonaktifkan sinkronisasi otomatis tidak menghapus cadangan iCloud yang sudah ada. Anda dapat melihat dan menghapus data iCloud app ini di pengelolaan penyimpanan iCloud Akun Apple, atau mematikan akses iCloud app di pengaturan sistem. Nama menu dapat berbeda menurut versi sistem. Petunjuk Apple: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple bertanggung jawab atas retensi dan penghapusan data dalam layanannya.</p>
+    <h3>Perubahan kebijakan ini</h3>
+    <p>Jika praktik penanganan data app berubah, pengembang akan memperbarui halaman ini dan tanggal revisinya.</p>
+    <h3>Kontak privasi</h3>
+    <p>Untuk pertanyaan tentang kebijakan ini atau penanganan informasi pribadi, hubungi:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Terjemahan ini dibuat dengan bantuan mesin dan masih perlu ditinjau oleh penutur asli. Jika menemukan perbedaan, hubungi kami melalui halaman dukungan.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-vi" lang="vi" dir="ltr" data-locale-section="vi" data-page-title="Chính sách quyền riêng tư" data-summary="Tìm hiểu cách HowLong lưu mục, lên lịch nhắc nhở và xử lý bản sao lưu iCloud." data-updated="Cập nhật lần cuối: 26 tháng 9, 2026" aria-labelledby="policy-title-vi">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · VI</p>
+      <h2 class="policy-title" id="policy-title-vi">Tiếng Việt</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>Giới thiệu về chính sách này</h3>
+    <p>Chính sách này giải thích cách “还有：到期提醒” (HowLong) xử lý thông tin bạn lưu trong ứng dụng. Nhà phát triển: Rongfu Fang (荣福 方).</p>
+    <h3>Thông tin ứng dụng xử lý</h3>
+    <ul>
+      <li>Các mục bạn tạo hoặc lưu, gồm tiêu đề, ngày, danh mục, ghi chú, quy tắc nhắc nhở, mục lưu trữ, công việc hằng ngày, lịch sử hoàn tất và tệp đính kèm liên quan.</li>
+      <li>Hình ảnh và tệp bạn chọn hoặc chụp. Apple Vision nhận dạng chữ trong ảnh ngay trên thiết bị của bạn. Nếu dùng bản sao lưu iCloud, bản sao lưu cũng có thể chứa các tệp đính kèm này.</li>
+      <li>Tùy chọn ứng dụng và trạng thái quyền lợi Premium được lưu trên thiết bị để cung cấp các tính năng tương ứng.</li>
+    </ul>
+    <h3>Lưu trữ và đồng bộ iCloud</h3>
+    <p>Theo mặc định, dữ liệu mục được lưu trên thiết bị của bạn. Ứng dụng không có hệ thống tài khoản riêng hoặc máy chủ do nhà phát triển vận hành để lưu nội dung mục.</p>
+    <p>Người dùng Premium có thể tải lên hoặc khôi phục bản sao lưu iCloud theo cách thủ công và bật đồng bộ tự động. Khi tải lên, ứng dụng ghi bản sao lưu hiện tại vào cơ sở dữ liệu CloudKit riêng tư liên kết với Tài khoản Apple của bạn để bạn khôi phục trên các thiết bị của mình. Bản sao lưu có thể gồm mục, danh mục, quy tắc nhắc nhở, mục lưu trữ, công việc hằng ngày, lịch sử hoàn tất và hình ảnh hoặc tệp đính kèm liên quan. Theo mặc định, chỉ bạn có thể truy cập cơ sở dữ liệu này và dữ liệu được tính vào dung lượng iCloud. Việc Apple xử lý dịch vụ iCloud tuân theo Chính sách quyền riêng tư của Apple: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>Thông báo, xuất và chia sẻ</h3>
+    <p>Nhắc hạn và nhắc hằng ngày được lên lịch bằng thông báo cục bộ của iOS. Ứng dụng không gửi các nhắc nhở này qua máy chủ thông báo đẩy do nhà phát triển vận hành.</p>
+    <p>Khi xuất bản sao lưu hoặc chia sẻ một mục hay mẫu phản hồi, nội dung được chuyển đến nơi bạn chọn trong bảng chia sẻ của hệ thống. Cách bên nhận xử lý nội dung tuân theo chính sách của họ.</p>
+    <h3>Mục mua và dịch vụ bên thứ ba</h3>
+    <p>Giao dịch mua trong ứng dụng do Apple App Store xử lý; nhà phát triển không nhận đầy đủ thông tin thẻ thanh toán của bạn. Đồng bộ iCloud do Apple CloudKit cung cấp. Ứng dụng hiện tại không dùng công nghệ theo dõi quảng cáo hoặc SDK phân tích của bên thứ ba.</p>
+    <h3>Xóa và lưu giữ</h3>
+    <p>Các mục đã lưu trữ vẫn nằm trong ứng dụng. Bạn có thể chọn “Xóa vĩnh viễn” trong mục lưu trữ để xóa một mục và tệp đính kèm khỏi thiết bị. Khi bật đồng bộ tự động, lần tải lên thành công tiếp theo sẽ thay bản sao lưu iCloud trước đó bằng bản hiện tại. Tắt đồng bộ tự động không xóa bản sao lưu iCloud đã có. Bạn có thể xem và xóa dữ liệu iCloud của ứng dụng trong phần quản lý dung lượng iCloud của Tài khoản Apple, hoặc tắt quyền truy cập iCloud của ứng dụng trong cài đặt hệ thống. Tên menu có thể khác tùy phiên bản hệ thống. Hướng dẫn của Apple: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple chịu trách nhiệm lưu giữ và xóa dữ liệu trong dịch vụ của mình.</p>
+    <h3>Thay đổi chính sách</h3>
+    <p>Nếu cách ứng dụng xử lý dữ liệu thay đổi, nhà phát triển sẽ cập nhật trang này và ngày sửa đổi.</p>
+    <h3>Liên hệ về quyền riêng tư</h3>
+    <p>Nếu có câu hỏi về chính sách này hoặc cách xử lý thông tin cá nhân, hãy liên hệ:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Bản dịch này được tạo với sự hỗ trợ của máy và vẫn cần người bản ngữ xem lại. Nếu phát hiện điểm khác biệt, hãy liên hệ qua trang hỗ trợ.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-ja" lang="ja" dir="ltr" data-locale-section="ja" data-page-title="プライバシーポリシー" data-summary="HowLongがアイテムを保存し、リマインダーを設定し、iCloudバックアップを扱う方法をご確認ください。" data-updated="最終更新日：2026年9月26日" aria-labelledby="policy-title-ja">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · JA</p>
+      <h2 class="policy-title" id="policy-title-ja">日本語</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>本ポリシーについて</h3>
+    <p>本ポリシーでは、「还有：到期提醒」（HowLong）アプリに保存した情報の取り扱いについて説明します。開発者：Rongfu Fang（荣福 方）。</p>
+    <h3>アプリが取り扱う情報</h3>
+    <ul>
+      <li>作成または保存したアイテム（タイトル、日付、カテゴリ、メモ、リマインダーのルール、アーカイブ、毎日のタスク、完了記録、関連する添付ファイルを含みます）。</li>
+      <li>選択または撮影した画像やファイル。Apple Visionはデバイス上で画像内の文字を認識します。iCloudバックアップを使用する場合、これらの添付ファイルもバックアップに含まれることがあります。</li>
+      <li>関連機能を提供するためにデバイスへ保存されるアプリの設定とPremiumの利用資格の状態。</li>
+    </ul>
+    <h3>保存とiCloud同期</h3>
+    <p>アイテムのデータはデフォルトでデバイスに保存されます。アプリには独立したアカウントシステムや、アイテムの内容を保存する開発者運営のサーバーはありません。</p>
+    <p>PremiumユーザーはiCloudバックアップを手動でアップロードまたは復元でき、自動同期も有効にできます。アップロード時、アプリは現在のバックアップをApple Accountに関連付けられたCloudKitプライベートデータベースに書き込み、ご自身のデバイスで復元できるようにします。バックアップにはアイテム、カテゴリ、リマインダーのルール、アーカイブ、毎日のタスク、完了記録、関連する画像やファイルが含まれることがあります。デフォルトではこのデータベースにアクセスできるのはご本人のみで、データはiCloudストレージの使用量に含まれます。iCloudサービスにおけるAppleの取り扱いはAppleのプライバシーポリシーに従います：<a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>。</p>
+    <h3>通知、書き出し、共有</h3>
+    <p>期限と毎日のリマインダーはiOSのローカル通知で設定されます。アプリは開発者運営のプッシュ通知サーバーを通じてこれらのリマインダーを送信しません。</p>
+    <p>バックアップを書き出したり、アイテムやフィードバック用テンプレートを共有したりすると、内容はシステムの共有シートで選択した送信先に渡されます。受信者による取り扱いには、その受信者自身のポリシーが適用されます。</p>
+    <h3>購入と他社サービス</h3>
+    <p>アプリ内購入はApple App Storeが処理します。開発者が支払いカードの全情報を受け取ることはありません。iCloud同期はApple CloudKitが提供します。現在のアプリは広告トラッキングや他社の分析SDKを使用していません。</p>
+    <h3>削除と保持</h3>
+    <p>アーカイブしたアイテムはアプリ内に残ります。アーカイブで「完全に削除」を選ぶと、アイテムと添付ファイルがデバイスから削除されます。自動同期が有効な場合、次回のアップロードが成功すると、iCloudの以前のバックアップは現在のバックアップに置き換わります。自動同期をオフにしても、既存のiCloudバックアップは削除されません。Apple AccountのiCloudストレージ管理でこのアプリのiCloudデータを確認・削除するか、システム設定でアプリのiCloudアクセスをオフにできます。メニュー名はシステムのバージョンによって異なる場合があります。Appleの手順：<a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud。Appleサービス内のデータの保持と削除はAppleが管理します" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud。Appleサービス内のデータの保持と削除はAppleが管理します</a>。</p>
+    <h3>本ポリシーの変更</h3>
+    <p>アプリのデータ取り扱いが変更された場合、開発者はこのページと更新日を改訂します。</p>
+    <h3>プライバシーに関するお問い合わせ</h3>
+    <p>本ポリシーまたは個人情報の取り扱いについてご質問がある場合は、こちらにご連絡ください：</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">この翻訳は機械翻訳を利用しており、ネイティブによる確認が必要です。内容に相違がある場合は、サポートページからご連絡ください。</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-ko" lang="ko" dir="ltr" data-locale-section="ko" data-page-title="개인정보 처리방침" data-summary="HowLong이 항목을 저장하고, 미리 알림을 예약하며, iCloud 백업을 처리하는 방법을 알아보세요." data-updated="최종 업데이트: 2026년 9월 26일" aria-labelledby="policy-title-ko">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · KO</p>
+      <h2 class="policy-title" id="policy-title-ko">한국어</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>이 방침에 관하여</h3>
+    <p>이 방침은 “还有：到期提醒”(HowLong) 앱에 저장하는 정보를 앱이 어떻게 처리하는지 설명합니다. 개발자: Rongfu Fang (荣福 方).</p>
+    <h3>앱이 처리하는 정보</h3>
+    <ul>
+      <li>사용자가 만들거나 저장한 항목(제목, 날짜, 카테고리, 메모, 미리 알림 규칙, 보관 항목, 일일 작업, 완료 기록 및 관련 첨부파일 포함).</li>
+      <li>사용자가 선택하거나 촬영한 이미지와 파일. Apple Vision은 기기에서 이미지의 텍스트를 인식합니다. iCloud 백업을 사용하는 경우 백업에 이러한 첨부파일도 포함될 수 있습니다.</li>
+      <li>관련 기능을 제공하기 위해 기기에 저장되는 앱 설정 및 Premium 권한 상태.</li>
+    </ul>
+    <h3>저장 및 iCloud 동기화</h3>
+    <p>항목 데이터는 기본적으로 기기에 저장됩니다. 앱에는 별도의 계정 시스템이나 항목 내용을 저장하기 위해 개발자가 운영하는 서버가 없습니다.</p>
+    <p>Premium 사용자는 iCloud 백업을 수동으로 업로드하거나 복원할 수 있으며 자동 동기화를 켤 수 있습니다. 업로드 시 앱은 현재 백업을 Apple 계정에 연결된 비공개 CloudKit 데이터베이스에 기록하여 사용자의 기기에서 복원할 수 있게 합니다. 백업에는 항목, 카테고리, 미리 알림 규칙, 보관 항목, 일일 작업, 완료 기록, 관련 이미지 또는 파일 첨부가 포함될 수 있습니다. 기본적으로 이 데이터베이스는 사용자만 접근할 수 있으며 데이터는 iCloud 저장 공간에 포함됩니다. iCloud 서비스의 데이터 처리는 Apple 개인정보 처리방침을 따릅니다: <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+    <h3>알림, 내보내기 및 공유</h3>
+    <p>기한 및 일일 미리 알림은 iOS 로컬 알림으로 예약됩니다. 앱은 개발자가 운영하는 푸시 서버를 통해 이러한 미리 알림을 보내지 않습니다.</p>
+    <p>백업을 내보내거나 항목 또는 피드백 양식을 공유하면 시스템 공유 시트에서 선택한 대상으로 내용이 전달됩니다. 수신자의 처리 방식은 수신자의 정책에 따릅니다.</p>
+    <h3>구입 및 타사 서비스</h3>
+    <p>앱 내 구입은 Apple App Store에서 처리하며 개발자는 결제 카드의 전체 정보를 받지 않습니다. iCloud 동기화는 Apple CloudKit에서 제공합니다. 현재 앱은 광고 추적이나 타사 분석 SDK를 사용하지 않습니다.</p>
+    <h3>삭제 및 보관</h3>
+    <p>보관된 항목은 앱에 남아 있습니다. 보관함에서 “영구 삭제”를 선택하면 항목과 첨부파일이 기기에서 제거됩니다. 자동 동기화가 켜져 있으면 다음 업로드가 성공할 때 iCloud의 이전 백업이 현재 백업으로 대체됩니다. 자동 동기화를 꺼도 기존 iCloud 백업은 삭제되지 않습니다. Apple 계정의 iCloud 저장 공간 관리에서 앱의 iCloud 데이터를 확인하고 삭제하거나 시스템 설정에서 앱의 iCloud 접근을 끌 수 있습니다. 시스템 버전에 따라 메뉴 이름이 다를 수 있습니다. Apple 안내: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple 서비스의 데이터 보관과 삭제는 Apple이 담당합니다.</p>
+    <h3>방침 변경</h3>
+    <p>앱의 데이터 처리 방식이 변경되면 개발자가 이 페이지와 수정 날짜를 업데이트합니다.</p>
+    <h3>개인정보 문의</h3>
+    <p>이 방침이나 개인정보 처리에 관한 질문은 다음 주소로 문의해 주세요:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">이 번역은 기계 번역의 도움을 받아 작성되었으며 원어민 검토가 필요합니다. 내용에 차이가 있으면 지원 페이지를 통해 문의해 주세요.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-tr" lang="tr" dir="ltr" data-locale-section="tr" data-page-title="Gizlilik Politikası" data-summary="HowLong&#x27;un kayıtlarınızı nasıl sakladığını, hatırlatıcıları nasıl zamanladığını ve iCloud yedeklerini nasıl işlediğini öğrenin." data-updated="Son güncelleme: 26 Eylül 2026" aria-labelledby="policy-title-tr">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · TR</p>
+      <h2 class="policy-title" id="policy-title-tr">Türkçe</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>Bu politika hakkında</h3>
+    <p>Bu politika, “还有：到期提醒” (HowLong) uygulamasında kaydettiğiniz bilgilerin nasıl işlendiğini açıklar. Geliştirici: Rongfu Fang (荣福 方).</p>
+    <h3>Uygulamanın işlediği bilgiler</h3>
+    <ul>
+      <li>Oluşturduğunuz veya kaydettiğiniz kayıtlar: başlıklar, tarihler, kategoriler, notlar, hatırlatıcı kuralları, arşivlenmiş kayıtlar, günlük görevler, tamamlanma kayıtları ve ilgili ekler.</li>
+      <li>Seçtiğiniz veya çektiğiniz görseller ve dosyalar. Apple Vision, görseldeki metni aygıtınızda tanır. iCloud yedeklemesi kullanırsanız yedekte bu ekler de bulunabilir.</li>
+      <li>İlgili özellikleri sunmak için aygıtta saklanan uygulama tercihleri ve Premium hak durumu.</li>
+    </ul>
+    <h3>Saklama ve iCloud eşzamanlaması</h3>
+    <p>Kayıt verileri varsayılan olarak aygıtınızda saklanır. Uygulamanın ayrı bir hesap sistemi veya kayıt içeriğini saklamak için geliştirici tarafından işletilen bir sunucusu yoktur.</p>
+    <p>Premium kullanıcıları iCloud yedeğini elle yükleyebilir veya geri yükleyebilir ve otomatik eşzamanlamayı açabilir. Yükleme sırasında uygulama, geçerli yedeği Apple Hesabınızla ilişkili özel CloudKit veritabanına yazar; böylece yedeği kendi aygıtlarınızda geri yükleyebilirsiniz. Yedek; kayıtları, kategorileri, hatırlatıcı kurallarını, arşivleri, günlük görevleri, tamamlanma kayıtlarını ve ilgili görsel ya da dosya eklerini içerebilir. Varsayılan olarak bu veritabanına yalnızca siz erişebilirsiniz ve veriler iCloud saklama alanınıza dahil edilir. Apple&#x27;ın iCloud hizmetlerindeki veri işlemesi <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a> adresindeki politikaya tabidir.</p>
+    <h3>Bildirimler, dışa aktarma ve paylaşım</h3>
+    <p>Son tarih ve günlük hatırlatıcılar iOS yerel bildirimleriyle zamanlanır. Uygulama bu hatırlatıcıları geliştiricinin işlettiği bir anlık bildirim sunucusu üzerinden göndermez.</p>
+    <p>Yedek dışa aktardığınızda veya bir kaydı ya da geri bildirim şablonunu paylaştığınızda içerik, sistem paylaşım ekranında seçtiğiniz hedefe aktarılır. Alıcının içeriği nasıl işleyeceği kendi politikalarına bağlıdır.</p>
+    <h3>Satın almalar ve üçüncü taraf hizmetleri</h3>
+    <p>Uygulama içi satın almalar Apple App Store tarafından işlenir; geliştirici ödeme kartı bilgilerinizin tamamını almaz. iCloud eşzamanlaması Apple CloudKit tarafından sağlanır. Mevcut uygulama reklam takibi veya üçüncü taraf analiz SDK&#x27;ları kullanmaz.</p>
+    <h3>Silme ve saklama süresi</h3>
+    <p>Arşivlenen kayıtlar uygulamada kalır. Arşivde “Kalıcı Olarak Sil” seçeneğini kullanarak bir kaydı ve eklerini aygıtınızdan kaldırabilirsiniz. Otomatik eşzamanlama açıksa sonraki başarılı yükleme, iCloud&#x27;daki önceki yedeği geçerli yedekle değiştirir. Otomatik eşzamanlamayı kapatmak mevcut iCloud yedeğini silmez. Apple Hesabınızdaki iCloud saklama alanı yönetiminden bu uygulamanın iCloud verilerini inceleyip silebilir veya sistem ayarlarından uygulamanın iCloud erişimini kapatabilirsiniz. Menü adları sistem sürümüne göre değişebilir. Apple&#x27;ın yönergeleri: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple hizmetlerindeki verilerin saklanması ve silinmesinden Apple sorumludur.</p>
+    <h3>Politika değişiklikleri</h3>
+    <p>Uygulamanın veri işleme uygulamaları değişirse geliştirici bu sayfayı ve güncelleme tarihini yeniler.</p>
+    <h3>Gizlilik iletişim bilgisi</h3>
+    <p>Bu politika veya kişisel bilgilerin işlenmesi hakkında sorularınız varsa şu adresten iletişime geçin:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">Bu çeviri makine yardımıyla hazırlanmıştır ve ana dili Türkçe olan kişilerce incelenmesi gerekir. Bir farklılık fark ederseniz destek sayfasından bize ulaşın.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-te" lang="te" dir="ltr" data-locale-section="te" data-page-title="గోప్యతా విధానం" data-summary="HowLong మీ అంశాలను ఎలా నిల్వ చేస్తుంది, రిమైండర్‌లను ఎలా షెడ్యూల్ చేస్తుంది, iCloud బ్యాకప్‌లను ఎలా నిర్వహిస్తుంది తెలుసుకోండి." data-updated="చివరిగా నవీకరించబడింది: 26 సెప్టెంబర్ 2026" aria-labelledby="policy-title-te">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · TE</p>
+      <h2 class="policy-title" id="policy-title-te">తెలుగు</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>ఈ విధానం గురించి</h3>
+    <p>“还有：到期提醒” (HowLong) యాప్‌లో మీరు భద్రపరిచే సమాచారాన్ని యాప్ ఎలా నిర్వహిస్తుందో ఈ విధానం వివరిస్తుంది. డెవలపర్: Rongfu Fang (荣福 方).</p>
+    <h3>యాప్ నిర్వహించే సమాచారం</h3>
+    <ul>
+      <li>మీరు సృష్టించే లేదా భద్రపరిచే అంశాలు: శీర్షికలు, తేదీలు, వర్గాలు, గమనికలు, రిమైండర్ నియమాలు, ఆర్కైవ్ చేసిన అంశాలు, రోజువారీ పనులు, పూర్తయిన రికార్డులు మరియు సంబంధిత జోడింపులు.</li>
+      <li>మీరు ఎంచుకునే లేదా తీసే చిత్రాలు, ఫైళ్లు. Apple Vision మీ పరికరంలోనే చిత్రంలోని వచనాన్ని గుర్తిస్తుంది. మీరు iCloud బ్యాకప్ ఉపయోగిస్తే, ఆ జోడింపులు కూడా బ్యాకప్‌లో ఉండవచ్చు.</li>
+      <li>సంబంధిత ఫీచర్‌లను అందించడానికి పరికరంలో భద్రపరిచే యాప్ ప్రాధాన్యతలు మరియు Premium హక్కుల స్థితి.</li>
+    </ul>
+    <h3>నిల్వ మరియు iCloud సమకాలీకరణ</h3>
+    <p>అంశాల డేటా సాధారణంగా మీ పరికరంలోనే నిల్వ అవుతుంది. అంశాల విషయాన్ని నిల్వ చేయడానికి యాప్‌కు ప్రత్యేక ఖాతా వ్యవస్థ లేదా డెవలపర్ నిర్వహించే సర్వర్ లేదు.</p>
+    <p>Premium వినియోగదారులు iCloud బ్యాకప్‌ను మాన్యువల్‌గా అప్‌లోడ్ చేయవచ్చు లేదా పునరుద్ధరించవచ్చు; ఆటోమేటిక్ సమకాలీకరణను కూడా ప్రారంభించవచ్చు. అప్‌లోడ్ చేసినప్పుడు యాప్ ప్రస్తుత బ్యాకప్‌ను మీ Apple ఖాతాకు అనుసంధానమైన ప్రైవేట్ CloudKit డేటాబేస్‌లో రాస్తుంది, తద్వారా మీరు మీ స్వంత పరికరాల్లో దాన్ని పునరుద్ధరించవచ్చు. బ్యాకప్‌లో అంశాలు, వర్గాలు, రిమైండర్ నియమాలు, ఆర్కైవ్‌లు, రోజువారీ పనులు, పూర్తయిన రికార్డులు, సంబంధిత చిత్రాలు లేదా ఫైల్ జోడింపులు ఉండవచ్చు. సాధారణంగా ఈ డేటాబేస్‌ను మీరు మాత్రమే యాక్సెస్ చేయగలరు; అందులోని డేటా మీ iCloud నిల్వలో లెక్కించబడుతుంది. iCloud సేవల్లో Apple చేసే డేటా నిర్వహణ <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a> లోని Apple గోప్యతా విధానానికి లోబడి ఉంటుంది.</p>
+    <h3>నోటిఫికేషన్‌లు, ఎగుమతి మరియు భాగస్వామ్యం</h3>
+    <p>గడువు మరియు రోజువారీ రిమైండర్‌లు iOS స్థానిక నోటిఫికేషన్‌లతో షెడ్యూల్ అవుతాయి. డెవలపర్ నిర్వహించే పుష్ సర్వర్ ద్వారా యాప్ ఈ రిమైండర్‌లను పంపదు.</p>
+    <p>మీరు బ్యాకప్‌ను ఎగుమతి చేసినప్పుడు లేదా అంశం/అభిప్రాయ నమూనాను పంచుకున్నప్పుడు, సిస్టమ్ షేర్ షీట్‌లో మీరు ఎంచుకున్న గమ్యానికి కంటెంట్ పంపబడుతుంది. ఆ కంటెంట్‌ను స్వీకర్త ఎలా నిర్వహిస్తారో వారి విధానాలపై ఆధారపడి ఉంటుంది.</p>
+    <h3>కొనుగోళ్లు మరియు మూడవ పక్ష సేవలు</h3>
+    <p>యాప్‌లో కొనుగోళ్లను Apple App Store ప్రాసెస్ చేస్తుంది; మీ చెల్లింపు కార్డు పూర్తి వివరాలు డెవలపర్‌కు అందవు. iCloud సమకాలీకరణను Apple CloudKit అందిస్తుంది. ప్రస్తుత యాప్ ప్రకటనల ట్రాకింగ్ లేదా మూడవ పక్ష విశ్లేషణ SDKలను ఉపయోగించదు.</p>
+    <h3>తొలగింపు మరియు నిల్వ కాలం</h3>
+    <p>ఆర్కైవ్ చేసిన అంశాలు యాప్‌లోనే ఉంటాయి. ఆర్కైవ్‌లో “శాశ్వతంగా తొలగించు” ఎంచుకుంటే అంశం మరియు దాని జోడింపులు పరికరం నుంచి తొలగించబడతాయి. ఆటోమేటిక్ సమకాలీకరణ ఆన్‌లో ఉంటే, తర్వాతి విజయవంతమైన అప్‌లోడ్ iCloudలోని పాత బ్యాకప్‌ను ప్రస్తుత బ్యాకప్‌తో భర్తీ చేస్తుంది. ఆటోమేటిక్ సమకాలీకరణను ఆఫ్ చేయడం వల్ల ఇప్పటికే ఉన్న iCloud బ్యాకప్ తొలగించబడదు. మీ Apple ఖాతా iCloud నిల్వ నిర్వహణలో ఈ యాప్ డేటాను చూసి తొలగించవచ్చు లేదా సిస్టమ్ సెట్టింగ్‌లలో యాప్‌కు iCloud యాక్సెస్‌ను ఆఫ్ చేయవచ్చు. సిస్టమ్ వెర్షన్‌ను బట్టి మెను పేర్లు మారవచ్చు. Apple సూచనలు: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud</a>. Apple సేవల్లోని డేటా నిల్వ మరియు తొలగింపుకు Apple బాధ్యత వహిస్తుంది.</p>
+    <h3>విధానంలో మార్పులు</h3>
+    <p>యాప్ డేటా నిర్వహణ పద్ధతులు మారితే, డెవలపర్ ఈ పేజీని మరియు నవీకరణ తేదీని మారుస్తారు.</p>
+    <h3>గోప్యతా సంప్రదింపు</h3>
+    <p>ఈ విధానం లేదా వ్యక్తిగత సమాచారం నిర్వహణ గురించి ప్రశ్నలుంటే ఇక్కడ సంప్రదించండి:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">ఈ అనువాదం యంత్ర సహాయంతో రూపొందించబడింది; మాతృభాష మాట్లాడేవారి సమీక్ష ఇంకా అవసరం. ఏదైనా తేడా కనిపిస్తే మద్దతు పేజీ ద్వారా మమ్మల్ని సంప్రదించండి.</p>
+  </div>
+</section>
+
+<section class="policy-card locale-section" id="privacy-ur" lang="ur" dir="rtl" data-locale-section="ur" data-page-title="رازداری کی پالیسی" data-summary="جانیں کہ HowLong آپ کی اشیا کیسے محفوظ کرتا، یاددہانیاں کیسے طے کرتا اور iCloud بیک اَپس کو کیسے سنبھالتا ہے۔" data-updated="آخری تازہ کاری: 26 ستمبر 2026" aria-labelledby="policy-title-ur">
+  <header class="policy-header">
+    <div>
+      <p class="eyebrow">POLICY · UR</p>
+      <h2 class="policy-title" id="policy-title-ur">اردو</h2>
+    </div>
+    <p class="policy-header-note">HowLong</p>
+  </header>
+  <div class="policy-copy">
+    <h3>اس پالیسی کے بارے میں</h3>
+    <p>یہ پالیسی بتاتی ہے کہ “还有：到期提醒” (HowLong) ایپ میں آپ کی محفوظ کردہ معلومات کو کیسے استعمال کرتا ہے۔ ڈویلپر: Rongfu Fang (荣福 方).</p>
+    <h3>ایپ کون سی معلومات استعمال کرتی ہے</h3>
+    <ul>
+      <li>آپ کی بنائی یا محفوظ کردہ اشیا: عنوانات، تاریخیں، زمرے، نوٹس، یاددہانی کے قواعد، محفوظ شدہ اشیا، روزانہ کے کام، تکمیل کے ریکارڈ اور متعلقہ منسلکات۔</li>
+      <li>آپ کی منتخب کردہ یا لی گئی تصاویر اور فائلیں۔ Apple Vision تصویر کے متن کو آپ کے آلے پر شناخت کرتا ہے۔ اگر آپ iCloud بیک اَپ استعمال کرتے ہیں تو اس میں یہ منسلکات بھی شامل ہو سکتے ہیں۔</li>
+      <li>متعلقہ خصوصیات فراہم کرنے کے لیے آلے پر محفوظ کردہ ایپ کی ترجیحات اور Premium استحقاق کی حالت۔</li>
+    </ul>
+    <h3>ذخیرہ اور iCloud ہم وقت سازی</h3>
+    <p>اشیا کا ڈیٹا بطورِ طے شدہ آپ کے آلے پر محفوظ ہوتا ہے۔ ایپ میں الگ اکاؤنٹ نظام یا اشیا کا مواد محفوظ کرنے کے لیے ڈویلپر کا چلایا ہوا سرور نہیں ہے۔</p>
+    <p>Premium صارفین iCloud بیک اَپ دستی طور پر اپ لوڈ یا بحال کر سکتے ہیں اور خودکار ہم وقت سازی بھی فعال کر سکتے ہیں۔ اپ لوڈ کے وقت ایپ موجودہ بیک اَپ کو آپ کے Apple اکاؤنٹ سے منسلک نجی CloudKit ڈیٹابیس میں لکھتی ہے تاکہ آپ اسے اپنے آلات پر بحال کر سکیں۔ بیک اَپ میں اشیا، زمرے، یاددہانی کے قواعد، محفوظ شدہ اشیا، روزانہ کے کام، تکمیل کے ریکارڈ اور متعلقہ تصاویر یا فائل منسلکات شامل ہو سکتے ہیں۔ بطورِ طے شدہ اس ڈیٹابیس تک صرف آپ کی رسائی ہوتی ہے اور اس کا ڈیٹا آپ کے iCloud اسٹوریج میں شمار ہوتا ہے۔ iCloud خدمات میں Apple کی معلومات کی پروسیسنگ <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">https://www.apple.com/legal/privacy/</a> پر موجود Apple کی رازداری کی پالیسی کے تابع ہے۔</p>
+    <h3>اطلاعات، برآمد اور اشتراک</h3>
+    <p>آخری تاریخ اور روزانہ کی یاددہانیاں iOS کی مقامی اطلاعات سے طے کی جاتی ہیں۔ ایپ یہ یاددہانیاں ڈویلپر کے چلائے ہوئے پش سرور کے ذریعے نہیں بھیجتی۔</p>
+    <p>جب آپ بیک اَپ برآمد کرتے یا کوئی شے یا رائے دینے کا نمونہ شیئر کرتے ہیں تو مواد سسٹم شیئر شیٹ میں آپ کے منتخب کردہ مقام کو دیا جاتا ہے۔ وصول کنندہ اسے کیسے استعمال کرتا ہے، اس کا انحصار اس کی اپنی پالیسیوں پر ہے۔</p>
+    <h3>خریداری اور فریقِ ثالث کی خدمات</h3>
+    <p>ایپ کے اندر خریداری Apple App Store کے ذریعے ہوتی ہے؛ ڈویلپر کو آپ کے ادائیگی کارڈ کی مکمل معلومات نہیں ملتیں۔ iCloud ہم وقت سازی Apple CloudKit فراہم کرتا ہے۔ موجودہ ایپ اشتہاری ٹریکنگ یا فریقِ ثالث کے تجزیاتی SDK استعمال نہیں کرتی۔</p>
+    <h3>حذف کرنا اور برقرار رکھنا</h3>
+    <p>محفوظ شدہ اشیا ایپ میں رہتی ہیں۔ محفوظ شدہ فہرست میں “مستقل طور پر حذف کریں” منتخب کرنے سے شے اور اس کے منسلکات آلے سے ہٹ جاتے ہیں۔ خودکار ہم وقت سازی فعال ہو تو بعد میں کامیاب اپ لوڈ iCloud کے پچھلے بیک اَپ کی جگہ موجودہ بیک اَپ رکھ دیتا ہے۔ خودکار ہم وقت سازی بند کرنے سے موجودہ iCloud بیک اَپ خود بخود حذف نہیں ہوتا۔ آپ اپنے Apple اکاؤنٹ کی iCloud اسٹوریج مینجمنٹ میں اس ایپ کا iCloud ڈیٹا دیکھ کر حذف کر سکتے ہیں، یا سسٹم سیٹنگز میں ایپ کی iCloud رسائی بند کر سکتے ہیں۔ مینو کے نام سسٹم ورژن کے مطابق بدل سکتے ہیں۔ Apple کی ہدایات: <a href="https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud۔" rel="noreferrer">https://support.apple.com/en-us/guide/icloud/mm62d92d6b3e/icloud۔</a> Apple اپنی خدمات میں ڈیٹا برقرار رکھنے اور حذف کرنے کا ذمہ دار ہے۔</p>
+    <h3>پالیسی میں تبدیلیاں</h3>
+    <p>اگر ایپ کے ڈیٹا کے استعمال کے طریقے بدلیں تو ڈویلپر اس صفحے اور تازہ کاری کی تاریخ کو اپ ڈیٹ کرے گا۔</p>
+    <h3>رازداری سے متعلق رابطہ</h3>
+    <p>اس پالیسی یا ذاتی معلومات کے استعمال کے بارے میں سوالات کے لیے یہاں رابطہ کریں:</p>
+    <p><a class="contact-link" href="mailto:rolf1120802408@gmail.com">rolf1120802408@gmail.com</a></p>
+    <p class="translation-note">یہ ترجمہ مشینی مدد سے تیار کیا گیا ہے اور اسے مادری زبان بولنے والوں کی جانچ درکار ہے۔ کوئی فرق نظر آئے تو معاونت کے صفحے سے رابطہ کریں۔</p>
+  </div>
+</section>
+        <!-- GENERATED_POLICY_SECTIONS_END -->
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -418,5 +1062,6 @@
       <span>隐私政策 / Privacy Policy · 2026</span>
     </footer>
   </div>
+  <script src="locale-switcher.js" defer></script>
 </body>
 </html>

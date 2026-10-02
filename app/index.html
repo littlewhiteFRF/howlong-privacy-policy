@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f9ff">
+  <meta name="description" content="Keep food expiration dates, return windows, warranties, and renewals together with clear countdowns and timely reminders in HowLong.">
+  <link rel="canonical" href="https://littlewhitefrf.github.io/howlong-privacy-policy/app/">
+  <title>HowLong — Keep important dates in sight</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #1e56e0;
+      --blue-dark: #1644b8;
+      --ink: #132b58;
+      --text: #334155;
+      --muted: #687b98;
+      --line: #e3ebf7;
+      --page: #f5f9ff;
+      --surface: #fff;
+      --urgent: #e56873;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--page);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-width: 320px;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 15% 0%, rgba(214, 230, 255, .78), transparent 36rem),
+        linear-gradient(180deg, #f8fbff 0%, var(--page) 48rem, #fff 100%);
+      line-height: 1.65;
+    }
+    a { color: var(--blue); text-underline-offset: .2em; }
+    a:hover { color: var(--blue-dark); }
+    a:focus-visible { outline: 3px solid #80aaff; outline-offset: 4px; border-radius: 5px; }
+    img { display: block; max-width: 100%; height: auto; }
+    h1, h2, p { margin-top: 0; }
+    .shell { width: min(1160px, calc(100% - 44px)); margin: 0 auto; }
+    .skip-link {
+      position: absolute; z-index: 5; top: 12px; left: 12px;
+      padding: 10px 14px; transform: translateY(-160%); border-radius: 12px;
+      background: var(--ink); color: #fff;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .topbar { display: flex; min-height: 86px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
+    .brand-mark { width: 39px; height: 39px; filter: drop-shadow(0 5px 10px rgba(30, 86, 224, .14)); }
+    .brand-name { font-size: 17px; font-weight: 740; letter-spacing: -.04em; }
+    .brand-name span { margin-left: 6px; color: var(--blue); font-size: 13px; font-weight: 620; }
+    .nav { display: flex; align-items: center; gap: 27px; }
+    .nav a { color: #526681; font-size: 13px; font-weight: 620; text-decoration: none; }
+    .nav .nav-cta { padding: 10px 16px; border: 1px solid #dbe7fa; border-radius: 999px; background: rgba(255,255,255,.74); color: var(--blue); }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 680px;
+      grid-template-columns: minmax(0, 1.04fr) minmax(350px, .96fr);
+      align-items: center;
+      overflow: hidden;
+      padding: clamp(34px, 6vw, 72px);
+      border: 1px solid rgba(255,255,255,.96);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 84% 48%, rgba(255,255,255,.85) 0 15rem, transparent 15.1rem),
+        linear-gradient(118deg, rgba(255,255,255,.97), rgba(231,241,255,.91));
+      box-shadow: 0 26px 80px rgba(35,71,126,.09), inset 0 1px 0 #fff;
+    }
+    .hero::after {
+      position: absolute; right: -180px; bottom: -270px; width: 580px; height: 580px;
+      border: 1px solid rgba(30,86,224,.09); border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(30,86,224,.025), 0 0 0 70px rgba(30,86,224,.018);
+      content: ""; pointer-events: none;
+    }
+    .hero-copy { position: relative; z-index: 2; max-width: 560px; padding: 0 0 14px; }
+    .eyebrow { margin-bottom: 16px; color: var(--blue); font-size: 11px; font-weight: 760; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { margin-bottom: 20px; color: var(--ink); font-size: clamp(44px, 6.2vw, 70px); font-weight: 740; letter-spacing: -.065em; line-height: 1.02; }
+    .hero-lead { max-width: 500px; margin-bottom: 27px; color: #526681; font-size: clamp(16px, 1.7vw, 19px); line-height: 1.65; }
+    .store-button {
+      display: inline-flex; min-height: 54px; align-items: center; gap: 12px; padding: 10px 19px;
+      border: 1px solid #194bc3; border-radius: 15px; background: var(--blue); color: #fff;
+      box-shadow: 0 10px 22px rgba(30,86,224,.21); font-size: 14px; font-weight: 700; text-decoration: none;
+      transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+    }
+    .store-button:hover { transform: translateY(-2px); background: var(--blue-dark); color: #fff; box-shadow: 0 14px 25px rgba(30,86,224,.24); }
+    .store-icon { display: grid; width: 27px; height: 27px; place-items: center; border: 1px solid rgba(255,255,255,.42); border-radius: 9px; font-size: 17px; line-height: 1; }
+    .store-label { display: grid; gap: 0; line-height: 1.25; }
+    .store-label small { font-size: 10px; font-weight: 550; opacity: .8; }
+    .store-label strong { font-size: 14px; }
+    .hero-note { margin: 15px 0 0; color: #788aa4; font-size: 12px; }
+    .hero-art { position: relative; z-index: 1; justify-self: center; width: min(100%, 355px); }
+    .hero-art img { width: 100%; border: 1px solid rgba(255,255,255,.86); border-radius: 27px; box-shadow: 0 24px 54px rgba(37,72,126,.16); }
+    .deadline-chip {
+      position: absolute; right: -34px; bottom: 70px; display: grid; grid-template-columns: 9px 1fr auto;
+      align-items: center; gap: 10px; min-width: 216px; padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,.96); border-radius: 17px;
+      background: rgba(255,255,255,.92); box-shadow: 0 14px 35px rgba(35,71,126,.14);
+      color: var(--ink); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .deadline-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--urgent); box-shadow: 0 0 0 4px rgba(229,104,115,.12); }
+    .deadline-name { font-size: 12px; font-weight: 670; }
+    .deadline-name small { display: block; color: #8292a9; font-size: 10px; font-weight: 560; }
+    .deadline-days { color: var(--urgent); font-size: 12px; font-weight: 760; white-space: nowrap; }
+
+    .use-cases { padding: 88px 0 28px; }
+    .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 28px; }
+    .section-heading .eyebrow { margin-bottom: 9px; }
+    h2 { margin-bottom: 0; color: var(--ink); font-size: clamp(30px, 4vw, 43px); font-weight: 710; letter-spacing: -.05em; line-height: 1.12; }
+    .section-intro { max-width: 390px; margin: 0 0 3px; color: var(--muted); font-size: 14px; }
+    .date-types { display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border: 1px solid #e1eafb; border-radius: 21px; background: rgba(255,255,255,.74); box-shadow: 0 12px 34px rgba(40,71,117,.045); }
+    .date-type { min-height: 102px; padding: 20px 22px; border-right: 1px solid var(--line); }
+    .date-type:last-child { border-right: 0; }
+    .date-type strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: 14px; font-weight: 680; }
+    .date-type span { color: #7b8da8; font-size: 12px; }
+
+    .screens { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; padding: 58px 0 96px; }
+    .screen-card {
+      display: grid; grid-template-columns: minmax(0,1fr) minmax(170px, .83fr); align-items: center; gap: 6px;
+      min-height: 430px; overflow: hidden; padding: 30px 26px 0 32px;
+      border: 1px solid rgba(225,234,247,.96); border-radius: 27px;
+      background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(239,246,255,.93));
+      box-shadow: 0 14px 40px rgba(40,71,117,.055), inset 0 1px 0 #fff;
+    }
+    .screen-copy { align-self: start; padding-top: 7px; }
+    .screen-copy .eyebrow { margin-bottom: 11px; font-size: 10px; }
+    .screen-copy h3 { margin: 0 0 9px; color: var(--ink); font-size: clamp(21px, 2.2vw, 27px); font-weight: 700; letter-spacing: -.045em; line-height: 1.16; }
+    .screen-copy p { max-width: 220px; margin-bottom: 20px; color: var(--muted); font-size: 13px; }
+    .screen-copy a { font-size: 12px; font-weight: 680; text-decoration: none; }
+    .screen-art { align-self: end; width: min(100%, 226px); justify-self: center; }
+    .screen-art img { width: 100%; border: 1px solid rgba(255,255,255,.94); border-radius: 19px 19px 0 0; box-shadow: 0 17px 36px rgba(38,70,119,.14); }
+
+    .closing {
+      display: flex; align-items: center; justify-content: space-between; gap: 28px;
+      margin-bottom: 58px; padding: clamp(28px, 5vw, 48px);
+      border: 1px solid rgba(255,255,255,.94); border-radius: 28px;
+      background: linear-gradient(112deg, #eaf2ff, #f8fbff 72%);
+      box-shadow: 0 18px 48px rgba(40,71,117,.06), inset 0 1px 0 #fff;
+    }
+    .closing h2 { max-width: 600px; margin-bottom: 8px; font-size: clamp(26px, 3.7vw, 37px); }
+    .closing p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .closing .store-button { flex: 0 0 auto; }
+    .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 0 2px 35px; color: #8190a7; font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer a { color: #647995; text-decoration: none; }
+    .footer a:hover { color: var(--blue); text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .hero { min-height: 610px; grid-template-columns: minmax(0,1fr) minmax(290px,.8fr); padding: 44px; }
+      .hero-art { width: min(100%, 315px); }
+      .deadline-chip { right: -14px; }
+      .date-type { padding: 18px 15px; }
+      .screen-card { grid-template-columns: 1fr; min-height: 0; padding: 27px 24px 0; }
+      .screen-copy { min-height: 142px; }
+      .screen-copy p { max-width: none; }
+      .screen-art { width: min(100%, 250px); }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 28px, 520px); }
+      .topbar { min-height: 72px; }
+      .brand { gap: 8px; }
+      .brand-mark { width: 35px; height: 35px; }
+      .brand-name { font-size: 15px; }
+      .brand-name span { font-size: 11px; }
+      .nav { gap: 13px; }
+      .nav a { font-size: 11px; }
+      .nav a:first-child { display: none; }
+      .nav .nav-cta { padding: 8px 12px; }
+      .hero { grid-template-columns: 1fr; gap: 26px; min-height: 0; padding: 31px 23px 24px; border-radius: 26px; }
+      .hero::after { right: -260px; bottom: -260px; }
+      .hero-copy { padding: 0; }
+      .eyebrow { margin-bottom: 12px; font-size: 10px; }
+      h1 { max-width: 460px; margin-bottom: 15px; font-size: clamp(41px, 12vw, 59px); }
+      .hero-lead { margin-bottom: 19px; font-size: 15px; }
+      .hero-note { margin-top: 11px; font-size: 11px; }
+      .hero-art { width: min(78%, 300px); }
+      .hero-art img { border-radius: 22px; }
+      .deadline-chip { right: -33px; bottom: 38px; min-width: 190px; padding: 11px 13px; }
+      .use-cases { padding: 58px 0 14px; }
+      .section-heading { display: block; margin-bottom: 19px; }
+      .section-intro { margin-top: 12px; font-size: 13px; }
+      .date-types { grid-template-columns: repeat(2, 1fr); }
+      .date-type { min-height: 84px; padding: 14px 15px; border-bottom: 1px solid var(--line); }
+      .date-type:nth-child(2) { border-right: 0; }
+      .date-type:nth-child(n+3) { border-bottom: 0; }
+      .date-type strong { font-size: 13px; }
+      .date-type span { font-size: 11px; }
+      .screens { grid-template-columns: 1fr; gap: 16px; padding: 34px 0 60px; }
+      .screen-card { grid-template-columns: minmax(0,1fr) minmax(138px,.82fr); gap: 8px; padding: 23px 18px 0 21px; border-radius: 22px; }
+      .screen-copy { min-height: 190px; padding-top: 4px; }
+      .screen-copy .eyebrow { font-size: 9px; }
+      .screen-copy h3 { font-size: 22px; }
+      .screen-copy p { font-size: 12px; }
+      .screen-art { width: 100%; }
+      .screen-art img { border-radius: 15px 15px 0 0; }
+      .closing { display: grid; gap: 22px; margin-bottom: 38px; padding: 27px 22px; border-radius: 23px; }
+      .closing .store-button { justify-self: start; }
+      .footer { flex-direction: column; align-items: flex-start; gap: 10px; padding-bottom: 25px; }
+      .footer-links { gap: 15px; }
+    }
+    @media (max-width: 370px) {
+      .nav { gap: 9px; }
+      .nav a { font-size: 10px; }
+      .screen-card { grid-template-columns: minmax(0,1fr) minmax(118px,.78fr); padding-left: 16px; padding-right: 14px; }
+      .screen-copy { min-height: 208px; }
+      .screen-copy h3 { font-size: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell" id="top">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="HowLong home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs><linearGradient id="mark-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9e9ff"/></linearGradient></defs>
+          <rect x="5" y="5" width="54" height="54" rx="17" fill="url(#mark-glass)" stroke="#fff" stroke-width="2"/>
+          <path d="M12 14c0-2.8 2.2-5 5-5h30c2.8 0 5 2.2 5 5v11H12z" fill="#bdd7ff"/>
+          <rect x="13" y="31" width="19" height="5" rx="2.5" fill="#76a8f6"/><rect x="13" y="41" width="13" height="4" rx="2" fill="#b2cff8"/>
+          <circle cx="39" cy="39" r="17" fill="#fff" stroke="#d3e4ff" stroke-width="4"/><path d="M39 22a17 17 0 0 1 16.2 11.8" fill="none" stroke="#1e56e0" stroke-width="5" stroke-linecap="round"/><path d="m39 39 7-8" fill="none" stroke="#1e56e0" stroke-width="3.5" stroke-linecap="round"/><circle cx="39" cy="39" r="2.6" fill="#1e56e0"/>
+        </svg>
+        <span class="brand-name">HowLong</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#dates">What you can track</a>
+        <a href="../support/">Support</a>
+        <a class="nav-cta" href="https://apps.apple.com/us/app/howlong-time-left/id6806547072" target="_blank" rel="noopener">View on the App Store ↗</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A clearer view of what’s next</p>
+          <h1 id="hero-title">Keep important dates in sight.</h1>
+          <p class="hero-lead">Food expiration dates, return windows, warranties, and renewals—together in one clear countdown, with reminders before time runs out.</p>
+          <a class="store-button" href="https://apps.apple.com/us/app/howlong-time-left/id6806547072" target="_blank" rel="noopener" aria-label="Download HowLong on the App Store">
+            <span class="store-icon" aria-hidden="true">↗</span>
+            <span class="store-label"><small>Available on the</small><strong>App Store</strong></span>
+          </a>
+          <p class="hero-note">Add a date. Set a reminder. Know what’s coming.</p>
+        </div>
+        <div class="hero-art">
+          <img src="assets/home.webp" width="1284" height="2778" alt="HowLong home screen showing a Nike return with 3 days left." fetchpriority="high">
+          <div class="deadline-chip" aria-label="Example: Nike Return, 3 days left">
+            <span class="deadline-dot" aria-hidden="true"></span>
+            <span class="deadline-name">Nike Return<small>Return window</small></span>
+            <span class="deadline-days">3 days left</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases" id="dates" aria-labelledby="dates-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">One list for real life</p><h2 id="dates-title">The dates you don’t want to miss.</h2></div>
+          <p class="section-intro">Keep everyday deadlines together, then check what’s urgent at a glance.</p>
+        </div>
+        <div class="date-types">
+          <div class="date-type"><strong>Food</strong><span>Expiration dates</span></div>
+          <div class="date-type"><strong>Returns</strong><span>Return windows</span></div>
+          <div class="date-type"><strong>Warranties</strong><span>Coverage dates</span></div>
+          <div class="date-type"><strong>Renewals</strong><span>Subscriptions &amp; more</span></div>
+        </div>
+      </section>
+
+      <section class="screens" aria-label="HowLong app screens">
+        <article class="screen-card">
+          <div class="screen-copy">
+            <p class="eyebrow">Plan ahead</p>
+            <h3>See what’s coming up.</h3>
+            <p>View upcoming dates in a calendar and spot the next deadline before it arrives.</p>
+            <a href="https://apps.apple.com/us/app/howlong-time-left/id6806547072" target="_blank" rel="noopener">Explore HowLong on the App Store ↗</a>
+          </div>
+          <div class="screen-art"><img src="assets/calendar.webp" width="1284" height="2778" alt="HowLong calendar view with an upcoming return date." loading="lazy" decoding="async"></div>
+        </article>
+        <article class="screen-card">
+          <div class="screen-copy">
+            <p class="eyebrow">Find it fast</p>
+            <h3>Search by name, note, or category.</h3>
+            <p>Bring a saved item back into view whenever you need it.</p>
+            <a href="https://apps.apple.com/us/app/howlong-time-left/id6806547072" target="_blank" rel="noopener">Explore HowLong on the App Store ↗</a>
+          </div>
+          <div class="screen-art"><img src="assets/search.webp" width="1284" height="2778" alt="HowLong search screen with suggested reminders." loading="lazy" decoding="async"></div>
+        </article>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <div><h2 id="closing-title">A little more time to act.</h2><p>Keep your important dates close and get a reminder before they pass.</p></div>
+        <a class="store-button" href="https://apps.apple.com/us/app/howlong-time-left/id6806547072" target="_blank" rel="noopener">
+          <span class="store-icon" aria-hidden="true">↗</span><span class="store-label"><small>Available on the</small><strong>App Store</strong></span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 HowLong</span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="../">Privacy Policy</a>
+        <a href="../support/">Support</a>
+        <a href="https://apps.apple.com/us/app/howlong-time-left/id6806547072" target="_blank" rel="noopener">App Store</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

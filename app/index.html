@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f9ff">
   <meta name="description" content="Keep food expiration dates, return windows, warranties, and renewals together with clear countdowns and timely reminders in HowLong.">
+  <meta property="og:title" content="HowLong — Keep important dates in sight">
+  <meta property="og:description" content="Keep food expiration dates, return windows, warranties, and renewals together with clear countdowns and timely reminders in HowLong.">
   <link rel="canonical" href="https://littlewhitefrf.github.io/howlong-privacy-policy/app/">
   <title>HowLong — Keep important dates in sight</title>
   <style>
@@ -57,6 +59,9 @@
     .nav { display: flex; align-items: center; gap: 27px; }
     .nav a { color: #526681; font-size: 13px; font-weight: 620; text-decoration: none; }
     .nav .nav-cta { padding: 10px 16px; border: 1px solid #dbe7fa; border-radius: 999px; background: rgba(255,255,255,.74); color: var(--blue); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .locale-select { max-width: 148px; padding: 8px 10px; border: 1px solid #dbe7fa; border-radius: 999px; background: rgba(255,255,255,.82); color: #526681; font: inherit; font-size: 12px; }
+    .locale-select:focus-visible { outline: 3px solid #80aaff; outline-offset: 2px; }
 
     .hero {
       position: relative;
@@ -115,10 +120,10 @@
     h2 { margin-bottom: 0; color: var(--ink); font-size: clamp(30px, 4vw, 43px); font-weight: 710; letter-spacing: -.05em; line-height: 1.12; }
     .section-intro { max-width: 390px; margin: 0 0 3px; color: var(--muted); font-size: 14px; }
     .date-types { display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border: 1px solid #e1eafb; border-radius: 21px; background: rgba(255,255,255,.74); box-shadow: 0 12px 34px rgba(40,71,117,.045); }
-    .date-type { min-height: 102px; padding: 20px 22px; border-right: 1px solid var(--line); }
-    .date-type:last-child { border-right: 0; }
+    .date-type { min-height: 102px; padding: 20px 22px; }
+    .date-type:last-child { border-inline-end: 0; }
+    .date-type { border-inline-end: 1px solid var(--line); }
     .date-type strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: 14px; font-weight: 680; }
-    .date-type span { color: #7b8da8; font-size: 12px; }
 
     .screens { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; padding: 58px 0 96px; }
     .screen-card {
@@ -146,10 +151,18 @@
     .closing h2 { max-width: 600px; margin-bottom: 8px; font-size: clamp(26px, 3.7vw, 37px); }
     .closing p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
     .closing .store-button { flex: 0 0 auto; }
+    .whats-new { display: flex; align-items: center; gap: 22px; margin: 0 0 58px; padding: 25px 30px; border: 1px solid #e1eafb; border-radius: 23px; background: linear-gradient(120deg, rgba(255,255,255,.96), rgba(239,246,255,.93)); box-shadow: 0 14px 40px rgba(40,71,117,.05); }
+    .update-badge { display: grid; width: 66px; height: 66px; flex: 0 0 66px; place-items: center; border: 1px solid #d8e6fb; border-radius: 19px; background: #fff; color: var(--blue); font-size: 14px; font-weight: 760; box-shadow: 0 8px 22px rgba(35,71,126,.08); }
+    .whats-new .eyebrow { margin-bottom: 5px; }
+    .whats-new h2 { margin-bottom: 5px; font-size: 25px; }
+    .whats-new p:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; }
     .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 0 2px 35px; color: #8190a7; font-size: 12px; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
     .footer a { color: #647995; text-decoration: none; }
     .footer a:hover { color: var(--blue); text-decoration: underline; }
+
+    html[lang="zh-Hans"] .hero h1,
+    html[lang="zh-Hant"] .hero h1 { max-width: 5.5em; font-size: clamp(40px, 5.2vw, 54px); }
 
     @media (max-width: 900px) {
       .hero { min-height: 610px; grid-template-columns: minmax(0,1fr) minmax(290px,.8fr); padding: 44px; }
@@ -162,16 +175,18 @@
       .screen-art { width: min(100%, 250px); }
     }
     @media (max-width: 640px) {
-      .shell { width: min(100% - 28px, 520px); }
-      .topbar { min-height: 72px; }
+      .shell { width: min(520px, calc(100% - 28px)); }
+      .topbar { min-height: 72px; flex-wrap: wrap; gap: 9px; padding: 11px 0; }
       .brand { gap: 8px; }
       .brand-mark { width: 35px; height: 35px; }
       .brand-name { font-size: 15px; }
       .brand-name span { font-size: 11px; }
-      .nav { gap: 13px; }
+      .nav { width: 100%; justify-content: space-between; gap: 9px; }
       .nav a { font-size: 11px; }
       .nav a:first-child { display: none; }
       .nav .nav-cta { padding: 8px 12px; }
+      .nav .nav-cta { margin-left: auto; }
+      .locale-select { max-width: 112px; padding: 7px 8px; font-size: 11px; }
       .hero { grid-template-columns: 1fr; gap: 26px; min-height: 0; padding: 31px 23px 24px; border-radius: 26px; }
       .hero::after { right: -260px; bottom: -260px; }
       .hero-copy { padding: 0; }
@@ -187,10 +202,9 @@
       .section-intro { margin-top: 12px; font-size: 13px; }
       .date-types { grid-template-columns: repeat(2, 1fr); }
       .date-type { min-height: 84px; padding: 14px 15px; border-bottom: 1px solid var(--line); }
-      .date-type:nth-child(2) { border-right: 0; }
+      .date-type:nth-child(2) { border-inline-end: 0; }
       .date-type:nth-child(n+3) { border-bottom: 0; }
       .date-type strong { font-size: 13px; }
-      .date-type span { font-size: 11px; }
       .screens { grid-template-columns: 1fr; gap: 16px; padding: 34px 0 60px; }
       .screen-card { grid-template-columns: minmax(0,1fr) minmax(138px,.82fr); gap: 8px; padding: 23px 18px 0 21px; border-radius: 22px; }
       .screen-copy { min-height: 190px; padding-top: 4px; }
@@ -201,6 +215,12 @@
       .screen-art img { border-radius: 15px 15px 0 0; }
       .closing { display: grid; gap: 22px; margin-bottom: 38px; padding: 27px 22px; border-radius: 23px; }
       .closing .store-button { justify-self: start; }
+      .whats-new { gap: 15px; margin-bottom: 38px; padding: 20px 18px; border-radius: 20px; }
+      .update-badge { width: 56px; height: 56px; flex-basis: 56px; border-radius: 16px; font-size: 12px; }
+      .whats-new h2 { font-size: 22px; }
+      .whats-new p:last-child { font-size: 12px; }
+      html[lang="zh-Hans"] .hero h1,
+      html[lang="zh-Hant"] .hero h1 { font-size: clamp(34px, 9vw, 40px); }
       .footer { flex-direction: column; align-items: flex-start; gap: 10px; padding-bottom: 25px; }
       .footer-links { gap: 15px; }
     }
@@ -218,10 +238,10 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skipLink">Skip to content</a>
   <div class="shell" id="top">
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="HowLong home">
+      <a class="brand" href="#top">
         <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
           <defs><linearGradient id="mark-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9e9ff"/></linearGradient></defs>
           <rect x="5" y="5" width="54" height="54" rx="17" fill="url(#mark-glass)" stroke="#fff" stroke-width="2"/>
@@ -231,85 +251,91 @@
         </svg>
         <span class="brand-name">HowLong</span>
       </a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#dates">What you can track</a>
-        <a href="../support/">Support</a>
-        <a class="nav-cta" href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener">View on the App Store ↗</a>
+      <nav class="nav" aria-label="Main navigation" data-i18n-attr="aria-label:mainNavigation">
+        <a href="#dates" data-i18n="navDates">What you can track</a>
+        <a href="../support/" data-language-link="../support/" data-i18n="navSupport">Support</a>
+        <label class="visually-hidden" for="locale-picker" data-i18n="languageLabel">Language / 语言</label>
+        <select class="locale-select" id="locale-picker" aria-label="Choose website language"></select>
+        <a class="nav-cta" href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener" data-i18n="navStore">View on the App Store ↗</a>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">A clearer view of what’s next</p>
-          <h1 id="hero-title">Keep important dates in sight.</h1>
-          <p class="hero-lead">Food expiration dates, return windows, warranties, and renewals—together in one clear countdown, with reminders before time runs out.</p>
-          <a class="store-button" href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener" aria-label="Download HowLong on the App Store">
+          <p class="eyebrow" data-i18n="heroEyebrow">A clearer view of what’s next</p>
+          <h1 id="hero-title" data-i18n="heroTitle">Keep important dates in sight.</h1>
+          <p class="hero-lead" data-i18n="heroLead">Food expiration dates, return windows, warranties, and renewals—together in one clear countdown, with reminders before time runs out.</p>
+          <a class="store-button" href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener" data-i18n-attr="aria-label:downloadAria">
             <span class="store-icon" aria-hidden="true">↗</span>
-            <span class="store-label"><small>Available on the</small><strong>App Store</strong></span>
+            <span class="store-label"><strong data-i18n="download">Download on the App Store</strong></span>
           </a>
-          <p class="hero-note">Add a date. Set a reminder. Know what’s coming.</p>
+          <p class="hero-note" data-i18n="heroNote">Add a date. Set a reminder. Know what’s coming.</p>
         </div>
         <div class="hero-art">
-          <img src="assets/home.webp" width="1284" height="2778" alt="HowLong home screen showing a Nike return with 3 days left." fetchpriority="high">
-          <div class="deadline-chip" aria-label="Example: Nike Return, 3 days left">
+          <img src="assets/home.webp" width="1284" height="2778" alt="HowLong home screen showing a Nike return with 3 days left." data-i18n-attr="alt:altHome" fetchpriority="high">
+          <div class="deadline-chip" aria-label="Example: Nike Return, 3 days left" data-i18n-attr="aria-label:deadlineAria">
             <span class="deadline-dot" aria-hidden="true"></span>
-            <span class="deadline-name">Nike Return<small>Return window</small></span>
-            <span class="deadline-days">3 days left</span>
+            <span class="deadline-name"><span data-i18n="deadlineTitle">Nike Return</span><small data-i18n="deadlineType">Return window</small></span>
+            <span class="deadline-days" data-i18n="deadlineDays">3 days left</span>
           </div>
         </div>
       </section>
 
       <section class="use-cases" id="dates" aria-labelledby="dates-title">
         <div class="section-heading">
-          <div><p class="eyebrow">One list for real life</p><h2 id="dates-title">The dates you don’t want to miss.</h2></div>
-          <p class="section-intro">Keep everyday deadlines together, then check what’s urgent at a glance.</p>
+          <div><p class="eyebrow" data-i18n="navDates">What you can track</p><h2 id="dates-title" data-i18n="datesTitle">The dates you don’t want to miss.</h2></div>
+          <p class="section-intro" data-i18n="datesIntro">Keep everyday deadlines together, then check what’s urgent at a glance.</p>
         </div>
         <div class="date-types">
-          <div class="date-type"><strong>Food</strong><span>Expiration dates</span></div>
-          <div class="date-type"><strong>Returns</strong><span>Return windows</span></div>
-          <div class="date-type"><strong>Warranties</strong><span>Coverage dates</span></div>
-          <div class="date-type"><strong>Renewals</strong><span>Subscriptions &amp; more</span></div>
+          <div class="date-type"><strong data-i18n="food">Food expiration dates</strong></div>
+          <div class="date-type"><strong data-i18n="returns">Return windows</strong></div>
+          <div class="date-type"><strong data-i18n="warranty">Warranty coverage</strong></div>
+          <div class="date-type"><strong data-i18n="renewals">Subscriptions and renewals</strong></div>
         </div>
       </section>
 
-      <section class="screens" aria-label="HowLong app screens">
+      <section class="screens" aria-label="HowLong app screens" data-i18n-attr="aria-label:screensLabel">
         <article class="screen-card">
           <div class="screen-copy">
-            <p class="eyebrow">Plan ahead</p>
-            <h3>See what’s coming up.</h3>
-            <p>View upcoming dates in a calendar and spot the next deadline before it arrives.</p>
-            <a href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener">Explore HowLong on the App Store ↗</a>
+            <h3 data-i18n="calendarTitle">See what’s coming up.</h3>
+            <p data-i18n="calendarText">View upcoming dates in a calendar and spot the next deadline before it arrives.</p>
+            <a href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener" data-i18n="navStore">App Store ↗</a>
           </div>
-          <div class="screen-art"><img src="assets/calendar.webp" width="1284" height="2778" alt="HowLong calendar view with an upcoming return date." loading="lazy" decoding="async"></div>
+          <div class="screen-art"><img src="assets/calendar.webp" width="1284" height="2778" alt="HowLong calendar view with an upcoming return date." data-i18n-attr="alt:altCalendar" loading="lazy" decoding="async"></div>
         </article>
         <article class="screen-card">
           <div class="screen-copy">
-            <p class="eyebrow">Find it fast</p>
-            <h3>Search by name, note, or category.</h3>
-            <p>Bring a saved item back into view whenever you need it.</p>
-            <a href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener">Explore HowLong on the App Store ↗</a>
+            <h3 data-i18n="searchTitle">Search by name, note, or category.</h3>
+            <p data-i18n="searchText">Bring a saved item back into view whenever you need it.</p>
+            <a href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener" data-i18n="navStore">App Store ↗</a>
           </div>
-          <div class="screen-art"><img src="assets/search.webp" width="1284" height="2778" alt="HowLong search screen with suggested reminders." loading="lazy" decoding="async"></div>
+          <div class="screen-art"><img src="assets/search.webp" width="1284" height="2778" alt="HowLong search screen with suggested reminders." data-i18n-attr="alt:altSearch" loading="lazy" decoding="async"></div>
         </article>
+      </section>
+
+      <section class="whats-new" aria-labelledby="whats-new-title">
+        <div class="update-badge" aria-hidden="true">1.0.7</div>
+        <div><h2 id="whats-new-title" data-i18n="updateTitle">What’s new in version 1.0.7</h2><p data-i18n="updateText">More languages, clearer date recognition, and better import suggestions.</p></div>
       </section>
 
       <section class="closing" aria-labelledby="closing-title">
-        <div><h2 id="closing-title">A little more time to act.</h2><p>Keep your important dates close and get a reminder before they pass.</p></div>
-        <a class="store-button" href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener">
-          <span class="store-icon" aria-hidden="true">↗</span><span class="store-label"><small>Available on the</small><strong>App Store</strong></span>
+        <div><h2 id="closing-title" data-i18n="closingTitle">A little more time to act.</h2><p data-i18n="closingText">Keep your important dates close and get a reminder before they pass.</p></div>
+        <a class="store-button" href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener" data-i18n-attr="aria-label:downloadAria">
+          <span class="store-icon" aria-hidden="true">↗</span><span class="store-label"><strong data-i18n="download">Download on the App Store</strong></span>
         </a>
       </section>
     </main>
 
     <footer class="footer">
       <span>© 2026 HowLong</span>
-      <nav class="footer-links" aria-label="Footer links">
-        <a href="../">Privacy Policy</a>
-        <a href="../support/">Support</a>
-        <a href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener">App Store</a>
+      <nav class="footer-links" aria-label="Footer links" data-i18n-attr="aria-label:footerNavigation">
+        <a href="../" data-language-link="../" data-i18n="privacy">Privacy Policy</a>
+        <a href="../support/" data-language-link="../support/" data-i18n="navSupport">Support</a>
+        <a href="https://apps.apple.com/app/apple-store/id6806547072?pt=129225631&amp;ct=LandingPage&amp;mt=8" target="_blank" rel="noopener" data-i18n="navStore">App Store ↗</a>
       </nav>
     </footer>
   </div>
+  <script src="localized-page.js" defer></script>
 </body>
 </html>
